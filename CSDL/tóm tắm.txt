@@ -1,0 +1,12 @@
+- Thêm bảng NCC
+- Thêm bảng thuốc
+- Thêm bảng khách hàng
+-- 
+Bài toán đặt hàng
+- Chức năng nhập hàng -> tạo ra đơn đặt hàng ( đặt thuốc, chọn ncc) -> đơn sẽ có trạng thái: đang soạn ( ncc confirm) --> đơn chấp nhận, in ra đơn
+
+---
+truy vấn: ngày sửa đổi mới nhất
+
+ràng buộc dữ liệu
+thuế
