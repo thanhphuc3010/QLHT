@@ -34,6 +34,7 @@ namespace QLyHieuThuoc
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.drgDMKH = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -44,8 +45,9 @@ namespace QLyHieuThuoc
             this.txbDiaChiKH = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txbLoaiDT = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.checkDVTC = new System.Windows.Forms.CheckBox();
+            this.checkKhachLe = new System.Windows.Forms.CheckBox();
+            this.lblCustomerType = new System.Windows.Forms.Label();
             this.txbTenKH = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txbMaKH = new System.Windows.Forms.TextBox();
@@ -63,6 +65,7 @@ namespace QLyHieuThuoc
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.btnXoa);
             this.panel1.Controls.Add(this.btnSua);
+            this.panel1.Controls.Add(this.btnLuu);
             this.panel1.Controls.Add(this.btnThem);
             this.panel1.Controls.Add(this.drgDMKH);
             this.panel1.Controls.Add(this.panel3);
@@ -70,7 +73,7 @@ namespace QLyHieuThuoc
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(10, 8);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(894, 595);
+            this.panel1.Size = new System.Drawing.Size(953, 595);
             this.panel1.TabIndex = 0;
             // 
             // txbMaCanTim
@@ -93,7 +96,7 @@ namespace QLyHieuThuoc
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(790, 262);
+            this.btnXoa.Location = new System.Drawing.Point(829, 262);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(91, 50);
             this.btnXoa.TabIndex = 12;
@@ -103,7 +106,7 @@ namespace QLyHieuThuoc
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(682, 262);
+            this.btnSua.Location = new System.Drawing.Point(721, 262);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(91, 50);
             this.btnSua.TabIndex = 11;
@@ -111,9 +114,19 @@ namespace QLyHieuThuoc
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
+            // btnLuu
+            // 
+            this.btnLuu.Location = new System.Drawing.Point(499, 262);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(91, 50);
+            this.btnLuu.TabIndex = 10;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(574, 262);
+            this.btnThem.Location = new System.Drawing.Point(613, 262);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(91, 50);
             this.btnThem.TabIndex = 10;
@@ -128,9 +141,10 @@ namespace QLyHieuThuoc
             this.drgDMKH.Name = "drgDMKH";
             this.drgDMKH.RowHeadersWidth = 51;
             this.drgDMKH.RowTemplate.Height = 24;
-            this.drgDMKH.Size = new System.Drawing.Size(859, 261);
+            this.drgDMKH.Size = new System.Drawing.Size(897, 261);
             this.drgDMKH.TabIndex = 9;
             this.drgDMKH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drgDMKH_CellContentClick);
+            this.drgDMKH.MouseUp += new System.Windows.Forms.MouseEventHandler(this.drgDMKH_MouseUp);
             // 
             // panel3
             // 
@@ -142,7 +156,7 @@ namespace QLyHieuThuoc
             this.panel3.Controls.Add(this.label7);
             this.panel3.Location = new System.Drawing.Point(499, 72);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(383, 171);
+            this.panel3.Size = new System.Drawing.Size(430, 171);
             this.panel3.TabIndex = 8;
             // 
             // txbEmail
@@ -150,7 +164,7 @@ namespace QLyHieuThuoc
             this.txbEmail.Location = new System.Drawing.Point(144, 106);
             this.txbEmail.Multiline = true;
             this.txbEmail.Name = "txbEmail";
-            this.txbEmail.Size = new System.Drawing.Size(206, 25);
+            this.txbEmail.Size = new System.Drawing.Size(277, 25);
             this.txbEmail.TabIndex = 7;
             // 
             // label5
@@ -168,7 +182,7 @@ namespace QLyHieuThuoc
             this.txbSDTKH.Location = new System.Drawing.Point(144, 60);
             this.txbSDTKH.Multiline = true;
             this.txbSDTKH.Name = "txbSDTKH";
-            this.txbSDTKH.Size = new System.Drawing.Size(206, 25);
+            this.txbSDTKH.Size = new System.Drawing.Size(277, 25);
             this.txbSDTKH.TabIndex = 5;
             // 
             // label6
@@ -186,7 +200,7 @@ namespace QLyHieuThuoc
             this.txbDiaChiKH.Location = new System.Drawing.Point(144, 13);
             this.txbDiaChiKH.Multiline = true;
             this.txbDiaChiKH.Name = "txbDiaChiKH";
-            this.txbDiaChiKH.Size = new System.Drawing.Size(206, 25);
+            this.txbDiaChiKH.Size = new System.Drawing.Size(277, 25);
             this.txbDiaChiKH.TabIndex = 3;
             // 
             // label7
@@ -202,41 +216,55 @@ namespace QLyHieuThuoc
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txbLoaiDT);
-            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.checkDVTC);
+            this.panel2.Controls.Add(this.checkKhachLe);
+            this.panel2.Controls.Add(this.lblCustomerType);
             this.panel2.Controls.Add(this.txbTenKH);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txbMaKH);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(23, 72);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(366, 171);
+            this.panel2.Size = new System.Drawing.Size(423, 171);
             this.panel2.TabIndex = 2;
             // 
-            // txbLoaiDT
+            // checkDVTC
             // 
-            this.txbLoaiDT.Location = new System.Drawing.Point(144, 106);
-            this.txbLoaiDT.Multiline = true;
-            this.txbLoaiDT.Name = "txbLoaiDT";
-            this.txbLoaiDT.Size = new System.Drawing.Size(206, 25);
-            this.txbLoaiDT.TabIndex = 9;
+            this.checkDVTC.AutoSize = true;
+            this.checkDVTC.Location = new System.Drawing.Point(257, 108);
+            this.checkDVTC.Name = "checkDVTC";
+            this.checkDVTC.Size = new System.Drawing.Size(120, 21);
+            this.checkDVTC.TabIndex = 10;
+            this.checkDVTC.Text = "Đơn vị tổ chức";
+            this.checkDVTC.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // checkKhachLe
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 106);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(131, 20);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Loại khách hàng";
+            this.checkKhachLe.AutoSize = true;
+            this.checkKhachLe.Location = new System.Drawing.Point(144, 108);
+            this.checkKhachLe.Name = "checkKhachLe";
+            this.checkKhachLe.Size = new System.Drawing.Size(85, 21);
+            this.checkKhachLe.TabIndex = 9;
+            this.checkKhachLe.Text = "Khách lẻ";
+            this.checkKhachLe.UseVisualStyleBackColor = true;
+            this.checkKhachLe.CheckedChanged += new System.EventHandler(this.cbKhachLe_CheckedChanged);
+            // 
+            // lblCustomerType
+            // 
+            this.lblCustomerType.AutoSize = true;
+            this.lblCustomerType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerType.Location = new System.Drawing.Point(3, 106);
+            this.lblCustomerType.Name = "lblCustomerType";
+            this.lblCustomerType.Size = new System.Drawing.Size(131, 20);
+            this.lblCustomerType.TabIndex = 8;
+            this.lblCustomerType.Text = "Loại khách hàng";
             // 
             // txbTenKH
             // 
             this.txbTenKH.Location = new System.Drawing.Point(144, 60);
             this.txbTenKH.Multiline = true;
             this.txbTenKH.Name = "txbTenKH";
-            this.txbTenKH.Size = new System.Drawing.Size(206, 25);
+            this.txbTenKH.Size = new System.Drawing.Size(233, 25);
             this.txbTenKH.TabIndex = 5;
             // 
             // label3
@@ -254,7 +282,7 @@ namespace QLyHieuThuoc
             this.txbMaKH.Location = new System.Drawing.Point(144, 13);
             this.txbMaKH.Multiline = true;
             this.txbMaKH.Name = "txbMaKH";
-            this.txbMaKH.Size = new System.Drawing.Size(206, 25);
+            this.txbMaKH.Size = new System.Drawing.Size(233, 25);
             this.txbMaKH.TabIndex = 3;
             // 
             // label2
@@ -281,7 +309,7 @@ namespace QLyHieuThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 615);
+            this.ClientSize = new System.Drawing.Size(990, 615);
             this.Controls.Add(this.panel1);
             this.Name = "fCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -320,8 +348,10 @@ namespace QLyHieuThuoc
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.TextBox txbLoaiDT;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblCustomerType;
         private System.Windows.Forms.TextBox txbMaCanTim;
+        private System.Windows.Forms.CheckBox checkDVTC;
+        private System.Windows.Forms.CheckBox checkKhachLe;
+        private System.Windows.Forms.Button btnLuu;
     }
 }

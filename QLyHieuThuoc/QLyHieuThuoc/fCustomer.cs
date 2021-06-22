@@ -16,7 +16,7 @@ namespace QLyHieuThuoc
     public partial class fCustomer : Form
     {
         private SqlConnection con;
-
+        public Boolean isAdd = true, isSave = false;
         public fCustomer()
         {
             InitializeComponent();
@@ -51,17 +51,21 @@ namespace QLyHieuThuoc
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string sqlINERT = "INSERT INTO tbl_DMKhachHang VALUES (@MaKH, @TenKH, @LoaiDT, @DChiKH, @SdtKH, @Email)";
-            SqlCommand cmd = new SqlCommand(sqlINERT, con);
-            cmd.Parameters.AddWithValue("MaKH", txbMaKH.Text);
-            cmd.Parameters.AddWithValue("TenKH", txbTenKH.Text);
-            cmd.Parameters.AddWithValue("LoaiDT", txbLoaiDT.Text);
-            cmd.Parameters.AddWithValue("DChiKH", txbDiaChiKH.Text);
-            cmd.Parameters.AddWithValue("SdtKH", txbSDTKH.Text);
-            cmd.Parameters.AddWithValue("Email", txbEmail.Text);
-            cmd.ExecuteNonQuery();
-            HienThi();
+            resetAllFieldsBlank();
+            btnThem.Text = "Lưu";
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+        }
 
+        public void resetAllFieldsBlank()
+        {
+            txbTenKH.Text = "";
+            txbMaKH.Text = "";
+            txbDiaChiKH.Text = "";
+            txbSDTKH.Text = "";
+            txbEmail.Text = "";
+            checkKhachLe.Checked = false;
+            checkDVTC.Checked = false;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -70,7 +74,7 @@ namespace QLyHieuThuoc
             SqlCommand cmd = new SqlCommand(sqlEdit, con);
             cmd.Parameters.AddWithValue("MaKH", txbMaKH.Text);
             cmd.Parameters.AddWithValue("TenKH", txbTenKH.Text);
-            cmd.Parameters.AddWithValue("LoaiDT", txbLoaiDT.Text);
+            //cmd.Parameters.AddWithValue("LoaiDT", txbLoaiDT.Text);
             cmd.Parameters.AddWithValue("DChiKH", txbDiaChiKH.Text);
             cmd.Parameters.AddWithValue("SdtKH", txbSDTKH.Text);
             cmd.Parameters.AddWithValue("Email", txbEmail.Text);
@@ -84,7 +88,7 @@ namespace QLyHieuThuoc
             SqlCommand cmd = new SqlCommand(sqlDELETE, con);
             cmd.Parameters.AddWithValue("MaKH", txbMaKH.Text);
             cmd.Parameters.AddWithValue("TenKH", txbTenKH.Text);
-            cmd.Parameters.AddWithValue("LoaiDT", txbLoaiDT.Text);
+            //cmd.Parameters.AddWithValue("LoaiDT", txbLoaiDT.Text);
             cmd.Parameters.AddWithValue("DChiKH", txbDiaChiKH.Text);
             cmd.Parameters.AddWithValue("SdtKH", txbSDTKH.Text);
             cmd.Parameters.AddWithValue("Email", txbEmail.Text);
@@ -98,7 +102,7 @@ namespace QLyHieuThuoc
             SqlCommand cmd = new SqlCommand(sqlTimKiem, con);
             cmd.Parameters.AddWithValue("MaKH", txbMaCanTim.Text);
             cmd.Parameters.AddWithValue("TenKH", txbTenKH.Text);
-            cmd.Parameters.AddWithValue("LoaiDT", txbLoaiDT.Text);
+            //cmd.Parameters.AddWithValue("LoaiDT", txbLoaiDT.Text);
             cmd.Parameters.AddWithValue("DChiKH", txbDiaChiKH.Text);
             cmd.Parameters.AddWithValue("SdtKH", txbSDTKH.Text);
             cmd.Parameters.AddWithValue("Email", txbEmail.Text);
@@ -113,10 +117,57 @@ namespace QLyHieuThuoc
         {
             int i = drgDMKH.CurrentRow.Index;
             txbTenKH.Text = drgDMKH.Rows[i].Cells["TenKH"].Value.ToString();
+            txbMaKH.Text = drgDMKH.Rows[i].Cells["MaKH"].Value.ToString();
+            txbDiaChiKH.Text = drgDMKH.Rows[i].Cells["DChiKH"].Value.ToString();
+            txbSDTKH.Text = drgDMKH.Rows[i].Cells["SdtKH"].Value.ToString();
+            txbEmail.Text = drgDMKH.Rows[i].Cells["Email"].Value.ToString();
+
+            Boolean typeChecked = Convert.ToBoolean(drgDMKH.Rows[i].Cells["LoaiDT"].Value);
+            if (typeChecked == true)
+            {
+                checkKhachLe.Checked = true;
+                checkDVTC.Checked = false;
+            } else
+            {
+                checkKhachLe.Checked = false;
+                checkDVTC.Checked = true;
+            }
 
         }
 
         private void drgDMKH_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            loadData();
+        }
+
+        private void cbKhachLe_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            int customerType;
+            string sqlINERT = "INSERT INTO tbl_DMKhachHang VALUES (@MaKH, @TenKH, @LoaiDT, @DChiKH, @SdtKH, @Email)";
+            SqlCommand cmd = new SqlCommand(sqlINERT, con);
+            cmd.Parameters.AddWithValue("MaKH", txbMaKH.Text);
+            cmd.Parameters.AddWithValue("TenKH", txbTenKH.Text);
+
+            if (checkKhachLe.Checked == true)
+            {
+                customerType = 1;
+            }
+            else customerType = 0;
+
+            cmd.Parameters.AddWithValue("LoaiDT", customerType);
+            cmd.Parameters.AddWithValue("DChiKH", txbDiaChiKH.Text);
+            cmd.Parameters.AddWithValue("SdtKH", txbSDTKH.Text);
+            cmd.Parameters.AddWithValue("Email", txbEmail.Text);
+            cmd.ExecuteNonQuery();
+            HienThi();
+        }
+
+        private void drgDMKH_MouseUp(object sender, MouseEventArgs e)
         {
             loadData();
         }

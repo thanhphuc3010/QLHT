@@ -68,5 +68,13 @@ namespace QLyHieuThuoc
             this.Show();
 
         }
+
+        private void danhSáchNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fStaff f = new fStaff();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

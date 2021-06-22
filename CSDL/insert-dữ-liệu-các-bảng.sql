@@ -1,4 +1,236 @@
-﻿USE QLHieuThuoc
+﻿--[dbo].[tbl_DMKhachHang]
+USE QLHieuThuoc
+GO
+
+--OK rồi ok :v
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0001',	N'Nguyễn Trọng Chiến',	0, N'189 Nghi Tàm - Yên Phụ - Tây Hồ - Hà Nội', '0914625434', 'mothaiba@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0002',	N'Hoàng Đức Duy',	'1', N'số 8 Đỗ Đức Dục, Từ Liêm, Hà Nội', '0375263511', 'bahaimot@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0003',	N'Nguyễn Thanh Kim Lan',	1, N'38 Gia Ngư, Hoàn Kiếm, Hà Nội', '0348765819', 'bonnamsau@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0005',	N'Lê Thị Mai Suốt',	1, N'12 Nguyễn Quang Bích, Hoàn Kiếm, Hà Nội', '0387541263', 'baytamchin@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0006',	N'Nguyễn Thị Anh Thư',	1, N'số 7 Đinh Tiên Hoàng, Hoàn Kiếm, Hà Nội.', '0915654728', 'bathuongcon@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0007',	N'Đặng Văn Giàu',	1, N'24 Tông Đản, Tràng Tiền, Hoàn Kiếm, Hà Nội', '0382291812', 'vicongiongme@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0009',	N'Dương Quốc Huy',	1, N'số 86 Hoàng Ngân, quận Cầu Giấy, Hà Nội.', '0347123412', 'vicongiongba@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0010',	N'Phạm Trí Luân',	1, N'số 173 Thái Hà Đống Đa Hà Nội', '0913846131', 'canhata@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0011',	N'Nguyễn Thị Ngọc Mai',	1, N'số 105C2 Vĩnh Hồ Đống Đa Hà Nội', '0857356423', 'cungiuthuongnhau@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0012',	N'Nguyễn Phi Phàm',	1, N'số 109 Ô Chợ Dừa Đống Đa Hà Nội', '0931446133', 'xalanho@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0013',	N'Dương Vĩnh Phúc',	1, N'số 48 Phan Đình Phùng Ba Đình Hà Nội', '0383757451', 'gannhaulacuoi@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0014',	N'Trần Thị Mỹ Phượng',	1, N'550 Trần Khát Trân Hai Bà Trưng Hà Nội', '0381425812', 'motconvit@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH00015',	N'Ngô Thành Tài',	1, N'17T3 Hoàng Đạo Thúy Cầu Giấy Hà Nội', '0384636243', 'xoerahaicaicanh@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0016',	N'Lâm Hùynh Phan Thanh',	1, N'số 2 ngõ 84 Trần Thái Tông Dịch Vọng Hậu Cầu Giấy Hà Nội', '0932131512', 'nokeurang@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0017',	N'Nguyễn Thị Cẩm Tiên',	1, N'số 10 Lý Quốc Sư Hoàn Kiếm Hà Nội', '0956362341', 'cakcakcak@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0018',	N'Nguyễn Thị Thanh Tuyền',	1, N'số 169 Đội Cấn Ba Đình Hà Nội', '0385347631', 'gaphonuoc@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0019',	N'Nguyễn Phong Vinh',	1, N'số 1 Hàng Điếu Hoàn Kiếm Hà Nội', '0425837631', 'quenloiroi@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0020',	N'Nguyễn Ngọc Ánh',	1, N'số 27 Ngũ Xã Ba Đình Hà Nội', '0385624513', 'motchumeocon@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0021',	N'Huỳnh Thị Diễm My',	1, N'số 57 phố Hàng Lược Hoàn Kiếm Hà Nội', '0947536234', 'haichumeocon@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0022',	N'Phạm Kim Ngân',	1, N'số 1 Hàng Mành Hoàn Kiếm Hà Nội', '0925735623', 'bachumeocon@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0023',	N'Phạm Thành Phát',	1, N'số 32 Cầu Gỗ Hoàn Kiếm Hà Nội', '0925734623', 'bonchumeocon@gmail.com');
+
+INSERT INTO tbl_DMKhachHang (MaKH, TenKh, LoaiDT, DChiKH, SdtKH, Email)  
+VALUES ('KH0024',	N'Đặng Văn Duy',	1, N'số 76 Hoàng Quốc Việt Cầu Giấy Hà Nội', '0939999999', 'tratientaoday@gmail.com');
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+--[dbo].[tbl_DMLoaiThuoc]
+
+INSERT INTO tbl_DMLoaiThuoc (MaThuoc, TenLoaiThuoc)  
+VALUES ('2020GE01', 'Thuốc kháng sinh');
+
+INSERT INTO tbl_DMLoaiThuoc (MaThuoc, TenLoaiThuoc)  
+VALUES ('2020GE02', 'Thuốc kháng viêm');
+
+INSERT INTO tbl_DMLoaiThuoc (MaThuoc, TenLoaiThuoc)  
+VALUES ('2020GE03', 'Thuốc kháng histamin');
+
+INSERT INTO tbl_DMLoaiThuoc (MaThuoc, TenLoaiThuoc)  
+VALUES ('2020BD13', 'Thuốc giảm đau, hạ sốt');
+
+INSERT INTO tbl_DMLoaiThuoc (MaThuoc, TenLoaiThuoc)  
+VALUES ('2020GE04', 'Thuốc dạ dày');
+
+INSERT INTO tbl_DMLoaiThuoc (MaThuoc, TenLoaiThuoc)  
+VALUES ('2020GE05', 'Nhóm thuốc antacid');
+
+INSERT INTO tbl_DMLoaiThuoc (MaThuoc, TenLoaiThuoc)  
+VALUES ('2020GE06', 'Thuốc tiêu hóa');
+
+INSERT INTO tbl_DMLoaiThuoc (MaThuoc, TenLoaiThuoc)  
+VALUES ('2020GE07', 'Thuốc giảm co thắt');
+
+INSERT INTO tbl_DMLoaiThuoc (MaThuoc, TenLoaiThuoc)  
+VALUES ('2020DY18', 'Thuốc trị tuần hoàn máu não');
+
+INSERT INTO tbl_DMLoaiThuoc (MaThuoc, TenLoaiThuoc)  
+VALUES ('2020GE08', 'Nhóm thuốc gan');
+
+INSERT INTO tbl_DMLoaiThuoc (MaThuoc, TenLoaiThuoc)  
+VALUES ('2020GE09', 'Nhóm trị suy giảm tĩnh mạch');
+
+INSERT INTO tbl_DMLoaiThuoc (MaThuoc, TenLoaiThuoc)  
+VALUES ('2020GE10', 'Thuốc bổ tổng hợp');
+
+INSERT INTO tbl_DMLoaiThuoc (MaThuoc, TenLoaiThuoc)  
+VALUES ('2020GE11', 'Thuốc bôi ngoài da');
+
+INSERT INTO tbl_DMLoaiThuoc (MaThuoc, TenLoaiThuoc)  
+VALUES ('2020GE12', 'Thực phẩm chức năng');
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+--[dbo].[tbl_DMNCC]		SELECT * FROM tbl_DMNCC
+
+INSERT INTO tbl_DMNCC (MaNCC, TenNCC, DChiNCC, SdtNCC, Email)  
+VALUES ('CC001', N'Công ty Cổ Phần Dược Phẩm Cửu Long - Việt Nam', N'150 đường 14 tháng 9, Phường 5, Thành phố Vĩnh Long, Vĩnh Long', 
+		'0703822129', 'info@fitgroup.com.vn');
+
+INSERT INTO tbl_DMNCC (MaNCC, TenNCC, DChiNCC, SdtNCC, Email)  
+VALUES ('CC002', N'Vinphaco-ViệtNam', N'124 Trần Hưng Đạo, Hà Nội', '0914235730', 'vinphac@vietnam.com.vn');
+
+INSERT INTO tbl_DMNCC (MaNCC, TenNCC, DChiNCC, SdtNCC, Email)  
+VALUES ('CC003', N'Công ty cổ phần dược phẩm An Thiên - Việt Nam', N'số 173 Thái Hà, Đống Đa, Hà Nội', '0265767767', 'dp@anthien.com.vn');
+
+INSERT INTO tbl_DMNCC (MaNCC, TenNCC, DChiNCC, SdtNCC, Email)  
+VALUES ('CC004', N'Công ty cổ phần vắc xin và sinh phẩm Nha Trang', N'số 105C2 Vĩnh Hồ, Đống Đa, Hà Nội', '0345787588', 'vacxin@sp.com.vn');
+
+INSERT INTO tbl_DMNCC (MaNCC, TenNCC, DChiNCC, SdtNCC, Email)  
+VALUES ('CC005', N'Công ty cổ phần dược phẩm CPC1 Hà Nội- Việt Nam', N'số 109 Ô Chợ Dừa, Đống Đa, Hà Nội', '0987433765', 'dp@cpc1.com.vn');
+
+INSERT INTO tbl_DMNCC (MaNCC, TenNCC, DChiNCC, SdtNCC, Email)  
+VALUES ('CC006', N'Công ty cổ phần Dược - Trang thiết bị y tế Bình Định (Bidiphar) - Việt Nam', N'số 48 Phan Đình Phùng, Ba Đình, Hà Nội', '0295478432', 'bidiphar@dp.com.vn');
+
+INSERT INTO tbl_DMNCC (MaNCC, TenNCC, DChiNCC, SdtNCC, Email)  
+VALUES ('CC007', N'Công ty cổ phần công nghệ cao Traphaco - Việt Nam', N'17T3 Hoàng Đạo Thúy, Cầu Giấy, Hà Nội', '0912335730', 'traphaco@vietnam.com.vn');
+
+INSERT INTO tbl_DMNCC (MaNCC, TenNCC, DChiNCC, SdtNCC, Email)  
+VALUES ('CC008', N'Công ty cổ phần dược phẩm trung ương 1 - Pharbaco - Việt Nam', N'135 Cầu Giấy, Hà Nội', '0914235730', 'pharbaco@tw.com.vn');
+
+INSERT INTO TBL_DMNCC
+VALUES ('CC009',N'Công ty cổ phần dược phẩm CPC1 Hà Nội- Việt Nam',N'số 109 Ô Chợ Dừa Đống Đa Hà Nội.','0987433765','dp@cpc1.com.vn');
+
+INSERT INTO TBL_DMNCC
+VALUES ('CC010',N'Công ty cổ phần Dược - Trang thiết bị y tế Bình Định (Bidiphar) - Việt Nam',N'số 109 Ô Chợ Dừa Đống Đa Hà Nội.','0987433765','dp@cpc1.com.vn');
+
+DELETE TBL_DMNCC
+--------------------------------------------------------------------------------------------------------------------------------
+
+--[dbo].[tbl_DMNhaSx]  select * from tbl_DMNhaSx
+
+INSERT INTO tbl_DMNhaSx (MaNhaSX, TenNhaSX, DChiNhaSX, SdtNhaSX, email)  
+VALUES ('SX001', N'Vidipha-ViệtNam', N'số 11, Trần Điền, Thanh Xuân, Hà Nội', '0299877766', 'dp@vidipha.com.vn');
+
+INSERT INTO tbl_DMNhaSx (MaNhaSX, TenNhaSX, DChiNhaSX, SdtNhaSX, email)  
+VALUES ('SX002', N'Công ty TNHH MTV dược phẩm Phước Sanh Pharma-Việt Nam', N'số 96 Kim Ngưu, Hai Bà Trưng, Hà Nội', '0298666866', 'dp@phuocsanh.pharma.com.vn');
+
+INSERT INTO tbl_DMNhaSx (MaNhaSX, TenNhaSX, DChiNhaSX, SdtNhaSX, email)  
+VALUES ('SX003', N'Công ty cổ phần dược phẩm Khánh Hòa - Việt Nam', N'số 12 Võ Văn Dũng, Đống Đa, Hà Nội', '0244879799', 'dp@khanhoa.com.vn');
+
+INSERT INTO tbl_DMNhaSx (MaNhaSX, TenNhaSX, DChiNhaSX, SdtNhaSX, email)  
+VALUES ('SX004', N'Công ty cổ phần Hóa- Dược phẩm Mekophar - Việt Nam', N'số 686 Nguyễn Văn Cừ, Long Biên, Hà Nội', '0344655656', 'hdp@mekophar.com.vn');
+
+INSERT INTO tbl_DMNhaSx (MaNhaSX, TenNhaSX, DChiNhaSX, SdtNhaSX, email)  
+VALUES ('SX005', N'Công ty cổ phần dược phẩm VCP- Việt Nam', N'số 573 Đê La Thành, Đống Đa, Hà Nội', '0233975551', 'dp@vcp.com.vn');
+
+INSERT INTO tbl_DMNhaSx (MaNhaSX, TenNhaSX, DChiNhaSX, SdtNhaSX, email)  
+VALUES ('SX006', N'CTCPPymepharco-ViệtNam', N'số 1 Hàng Mành, Hoàn Kiếm, Hà Nội', '0213855554', 'mepharco@dp.com.vn');
+
+INSERT INTO tbl_DMNhaSx (MaNhaSX, TenNhaSX, DChiNhaSX, SdtNhaSX, email)  
+VALUES ('SX007', N'CN cty TNHH LDStada - Việt Nam', N'số 27 Ngũ Xã, Ba Đình, Hà Nội', '0385436222', 'ld@stada.com.vn');
+
+INSERT INTO tbl_DMNhaSx (MaNhaSX, TenNhaSX, DChiNhaSX, SdtNhaSX, email)  
+VALUES ('SX008', N'Trường Thọ-ViệtNam', N'số 169 Đội Cấn, Ba Đình, Hà Nội', '0238575546', 'dp@truongtho.com.vn');
+
+INSERT INTO tbl_DMNhaSx
+VALUES ('SX009',N'Công ty cổ phần dược phẩm CPC1 Hà Nội- Việt Nam',N'số 109 Ô Chợ Dừa Đống Đa Hà Nội.','0987433765','dp@cpc1.com.vn');
+
+INSERT INTO tbl_DMNhaSx
+VALUES ('SX010',N'Công ty cổ phần Dược - Trang thiết bị y tế Bình Định (Bidiphar) - Việt Nam',N'số 48 Phan Đình Phùng Ba Đình Hà Nội.','0295478432','bidiphar@dp.com.vn');
+
+INSERT INTO tbl_DMNhaSx
+VALUES ('SX011',N'CôngtyCPSPM-ViệtNam',N'550 Trần Khát Trân Hai Bà Trưng Hà Nội.','0223468556','spm@vietnam.com.vn');
+
+INSERT INTO tbl_DMNhaSx
+VALUES ('SX012',N'Công ty cổ phần công nghệ cao Traphaco - Việt Nam',N'17T3 Hoàng Đạo Thúy Cầu Giấy Hà Nội.','0239865766','traphaco@vietnam.com.vn');
+
+INSERT INTO tbl_DMNhaSx
+VALUES ('SX013',N'Công ty cổphần dược VTYT Hà Nam- Việt Nam',N'số 2 ngõ 84 Trần Thái Tông Dịch Vọng Hậu Cầu Giấy Hà Nội.','0298777732','dp@vtyt.hanam.com.vn');
+
+INSERT INTO tbl_DMNhaSx
+VALUES ('SX014',N'Công ty cổ phần dược phẩm Trung ương 2- Việt Nam',N'số 10 Lý Quốc Sư Hoàn Kiếm Hà Nội.','0485768757','dp@tw.com.vn');
+
+INSERT INTO tbl_DMNhaSx
+VALUES ('SX015',N'TrườngThọ-ViệtNam',N'số 169 Đội Cấn Ba Đình Hà Nội.','0238575546','dp@truongtho.com.vn');
+
+INSERT INTO tbl_DMNhaSx
+VALUES ('SX016',N'Công ty Cổ phần dược phẩm Vĩnh Phúc- Việt Nam',N'số 1 Hàng Điếu Hoàn Kiếm Hà Nội.','0484726466','dp@vinhphuc.com.vn');
+
+INSERT INTO tbl_DMNhaSx
+VALUES ('SX017',N'CN cty TNHH LDStada - Việt Nam',N'số 27 Ngũ Xã Ba Đình Hà Nội.','0385436222','ld@stada.com.vn');
+
+INSERT INTO tbl_DMNhaSx
+VALUES ('SX019',N'CTCPPymepharco-ViệtNam','số 1 Hàng Mành Hoàn Kiếm Hà Nội.','0213855554','mepharco@dp.com.vn');
+
+INSERT INTO tbl_DMNhaSx
+VALUES ('SX020',N'Công ty cổ phần dược phẩm trung ương 1 - Pharbaco - Việt Nam',N'số 32 Cầu Gỗ Hoàn Kiếm Hà Nội.','0344455789','pharbaco@tw.com.vn');
+
+INSERT INTO tbl_DMNhaSx
+VALUES ('SX021',N'Công ty cổ phần dược phẩm VCP- Việt Nam',N'số 573 Đê La Thành Đống Đa Hà Nội.','0233975551','dp@vcp.com.vn');
+
+INSERT INTO tbl_DMNhaSx
+VALUES ('SX022',N'Công ty cổ phần Hóa- Dược phẩm Mekophar - Việt Nam',N'số 686 Nguyễn Văn Cừ Long Biên Hà Nội.','0344655656','hdp@mekophar.com.vn');
+
+INSERT INTO tbl_DMNhaSx
+VALUES ('SX024',N'Công ty cổ phần dược phẩm Khánh Hòa - Việt Nam',N'số 12 Võ Văn Dũng Đống Đa Hà Nội.','0244879799','dp@khanhoa.com.vn');
+
+INSERT INTO tbl_DMNhaSx
+VALUES ('SX025',N'Công ty TNHH MTV dược phẩm Phước Sanh Pharma-Việt Nam',N'số 96 Kim Ngưu Hai Bà Trưng Hà Nội.','0298666866','dp@phuocsanh.pharma.com.vn');
+
+INSERT INTO tbl_DMNhaSx
+VALUES ('SX026',N'Vidipha-ViệtNam',N'số 11 Trần Điền Thanh Xuân Hà Nội.','0299877766','dp@vidipha.com.vn');
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+USE QLHieuThuoc
 GO
 
 
