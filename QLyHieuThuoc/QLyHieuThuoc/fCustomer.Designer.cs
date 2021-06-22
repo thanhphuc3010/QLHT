@@ -30,8 +30,7 @@ namespace QLyHieuThuoc
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txbMaCanTim = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtKeySearch = new System.Windows.Forms.TextBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -61,8 +60,7 @@ namespace QLyHieuThuoc
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txbMaCanTim);
-            this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.Controls.Add(this.txtKeySearch);
             this.panel1.Controls.Add(this.btnXoa);
             this.panel1.Controls.Add(this.btnSua);
             this.panel1.Controls.Add(this.btnLuu);
@@ -76,23 +74,14 @@ namespace QLyHieuThuoc
             this.panel1.Size = new System.Drawing.Size(953, 595);
             this.panel1.TabIndex = 0;
             // 
-            // txbMaCanTim
+            // txtKeySearch
             // 
-            this.txbMaCanTim.Location = new System.Drawing.Point(146, 262);
-            this.txbMaCanTim.Multiline = true;
-            this.txbMaCanTim.Name = "txbMaCanTim";
-            this.txbMaCanTim.Size = new System.Drawing.Size(159, 50);
-            this.txbMaCanTim.TabIndex = 14;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(23, 262);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(91, 50);
-            this.btnSearch.TabIndex = 13;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.button4_Click);
+            this.txtKeySearch.Location = new System.Drawing.Point(23, 276);
+            this.txtKeySearch.Multiline = true;
+            this.txtKeySearch.Name = "txtKeySearch";
+            this.txtKeySearch.Size = new System.Drawing.Size(423, 31);
+            this.txtKeySearch.TabIndex = 14;
+            this.txtKeySearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbMaCanTim_KeyUp);
             // 
             // btnXoa
             // 
@@ -247,7 +236,6 @@ namespace QLyHieuThuoc
             this.checkKhachLe.TabIndex = 9;
             this.checkKhachLe.Text = "Khách lẻ";
             this.checkKhachLe.UseVisualStyleBackColor = true;
-            this.checkKhachLe.CheckedChanged += new System.EventHandler(this.cbKhachLe_CheckedChanged);
             // 
             // lblCustomerType
             // 
@@ -344,12 +332,11 @@ namespace QLyHieuThuoc
         private System.Windows.Forms.TextBox txbDiaChiKH;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView drgDMKH;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label lblCustomerType;
-        private System.Windows.Forms.TextBox txbMaCanTim;
+        private System.Windows.Forms.TextBox txtKeySearch;
         private System.Windows.Forms.CheckBox checkDVTC;
         private System.Windows.Forms.CheckBox checkKhachLe;
         private System.Windows.Forms.Button btnLuu;

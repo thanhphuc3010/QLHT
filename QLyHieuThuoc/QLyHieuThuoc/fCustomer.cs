@@ -100,7 +100,7 @@ namespace QLyHieuThuoc
         {
             string sqlTimKiem = "DELETE FROM tbl_DMKhachHang WHERE MaKH= @MaKH ";
             SqlCommand cmd = new SqlCommand(sqlTimKiem, con);
-            cmd.Parameters.AddWithValue("MaKH", txbMaCanTim.Text);
+            cmd.Parameters.AddWithValue("MaKH", txtKeySearch.Text);
             cmd.Parameters.AddWithValue("TenKH", txbTenKH.Text);
             //cmd.Parameters.AddWithValue("LoaiDT", txbLoaiDT.Text);
             cmd.Parameters.AddWithValue("DChiKH", txbDiaChiKH.Text);
@@ -140,11 +140,6 @@ namespace QLyHieuThuoc
             loadData();
         }
 
-        private void cbKhachLe_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             int customerType;
@@ -165,6 +160,20 @@ namespace QLyHieuThuoc
             cmd.Parameters.AddWithValue("Email", txbEmail.Text);
             cmd.ExecuteNonQuery();
             HienThi();
+        }
+
+        private void txbMaCanTim_KeyUp(object sender, KeyEventArgs e)
+        {
+            string sqlSELECT = " SELECT * FROM tbl_DMKhachHang Where MaKH LIKE '%" + txtKeySearch.Text + "%'" + "" +
+                " OR TenKh LIKE N'%" + txtKeySearch.Text + "%'" + "" +
+                " OR DChiKH LIKE N'%" + txtKeySearch.Text + "%'" + "" +
+                " OR SdtKH LIKE '%" + txtKeySearch.Text + "%'" + "" +
+                " OR Email LIKE '%" + txtKeySearch.Text + "%'";
+            SqlCommand cmd = new SqlCommand(sqlSELECT, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            drgDMKH.DataSource = dt;
         }
 
         private void drgDMKH_MouseUp(object sender, MouseEventArgs e)
