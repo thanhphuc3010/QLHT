@@ -207,7 +207,6 @@ namespace QLyHieuThuoc
             this.label7.Size = new System.Drawing.Size(70, 25);
             this.label7.TabIndex = 2;
             this.label7.Text = "Địa chỉ";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // panel2
             // 

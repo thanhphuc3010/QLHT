@@ -96,3 +96,9 @@ D:\QLHT\QLyHieuThuoc\QLyHieuThuoc\obj\Debug\QLyHieuThuoc.csproj.CoreCompileInput
 D:\QLHT\QLyHieuThuoc\QLyHieuThuoc\obj\Debug\QLyHieuThuoc.csproj.CopyComplete
 D:\QLHT\QLyHieuThuoc\QLyHieuThuoc\obj\Debug\QLyHieuThuoc.exe
 D:\QLHT\QLyHieuThuoc\QLyHieuThuoc\obj\Debug\QLyHieuThuoc.pdb
+D:\PTUDQL2021\QLHT\QLyHieuThuoc\QLyHieuThuoc\bin\Debug\Castle.Core.dll
+D:\PTUDQL2021\QLHT\QLyHieuThuoc\QLyHieuThuoc\bin\Debug\NSubstitute.dll
+D:\PTUDQL2021\QLHT\QLyHieuThuoc\QLyHieuThuoc\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\PTUDQL2021\QLHT\QLyHieuThuoc\QLyHieuThuoc\bin\Debug\Castle.Core.xml
+D:\PTUDQL2021\QLHT\QLyHieuThuoc\QLyHieuThuoc\bin\Debug\NSubstitute.xml
+D:\PTUDQL2021\QLHT\QLyHieuThuoc\QLyHieuThuoc\bin\Debug\System.Threading.Tasks.Extensions.xml

@@ -30,6 +30,10 @@ namespace QLyHieuThuoc
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txbTen = new System.Windows.Forms.TextBox();
@@ -37,17 +41,15 @@ namespace QLyHieuThuoc
             this.label3 = new System.Windows.Forms.Label();
             this.txbMa = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dmLoaiThuoc)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnXoa);
+            this.panel1.Controls.Add(this.btnSua);
+            this.panel1.Controls.Add(this.btnLuu);
             this.panel1.Controls.Add(this.btnThem);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -60,6 +62,50 @@ namespace QLyHieuThuoc
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(927, 551);
             this.panel1.TabIndex = 0;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(718, 190);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(91, 50);
+            this.btnXoa.TabIndex = 21;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Location = new System.Drawing.Point(610, 190);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(91, 50);
+            this.btnSua.TabIndex = 20;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Location = new System.Drawing.Point(832, 190);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(91, 50);
+            this.btnLuu.TabIndex = 18;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Location = new System.Drawing.Point(502, 190);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(91, 50);
+            this.btnThem.TabIndex = 19;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
             // 
             // label5
             // 
@@ -80,7 +126,6 @@ namespace QLyHieuThuoc
             this.label4.Size = new System.Drawing.Size(120, 22);
             this.label4.TabIndex = 7;
             this.label4.Text = "Mã loại thuốc";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txbTen
             // 
@@ -99,6 +144,7 @@ namespace QLyHieuThuoc
             this.dmLoaiThuoc.RowTemplate.Height = 24;
             this.dmLoaiThuoc.Size = new System.Drawing.Size(925, 293);
             this.dmLoaiThuoc.TabIndex = 5;
+            this.dmLoaiThuoc.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dmLoaiThuoc_MouseUp);
             // 
             // label3
             // 
@@ -128,36 +174,6 @@ namespace QLyHieuThuoc
             this.label1.TabIndex = 1;
             this.label1.Text = "DANH MỤC CÁC LOẠI THUỐC";
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(238, 161);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 39);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Xóa";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(118, 161);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 39);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Sửa";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(-2, 161);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(103, 39);
-            this.btnThem.TabIndex = 15;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
             // fType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -185,8 +201,9 @@ namespace QLyHieuThuoc
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txbTen;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnThem;
     }
 }

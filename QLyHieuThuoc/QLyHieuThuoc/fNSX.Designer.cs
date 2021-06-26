@@ -74,6 +74,7 @@ namespace QLyHieuThuoc
             this.btnLuu.TabIndex = 17;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -83,6 +84,7 @@ namespace QLyHieuThuoc
             this.btnXoa.TabIndex = 16;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // dmNSX
             // 
@@ -93,6 +95,8 @@ namespace QLyHieuThuoc
             this.dmNSX.RowTemplate.Height = 24;
             this.dmNSX.Size = new System.Drawing.Size(972, 284);
             this.dmNSX.TabIndex = 3;
+            this.dmNSX.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dmNSX_CellContentClick);
+            this.dmNSX.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dmNSX_MouseUp);
             // 
             // btnSua
             // 
@@ -102,6 +106,7 @@ namespace QLyHieuThuoc
             this.btnSua.TabIndex = 15;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // panel2
             // 
@@ -218,6 +223,7 @@ namespace QLyHieuThuoc
             this.btnThem.TabIndex = 14;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label1
             // 

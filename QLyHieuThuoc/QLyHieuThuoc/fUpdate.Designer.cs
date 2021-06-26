@@ -34,9 +34,10 @@ namespace QLyHieuThuoc
             this.dsThuoc = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txbNhaSanXuat = new System.Windows.Forms.TextBox();
@@ -68,7 +69,6 @@ namespace QLyHieuThuoc
             this.txbMaThuoc = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnLuu = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsThuoc)).BeginInit();
@@ -115,6 +115,7 @@ namespace QLyHieuThuoc
             this.dsThuoc.Size = new System.Drawing.Size(1164, 256);
             this.dsThuoc.TabIndex = 18;
             this.dsThuoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dsThuoc_CellContentClick);
+            this.dsThuoc.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dsThuoc_MouseUp);
             // 
             // label12
             // 
@@ -130,8 +131,8 @@ namespace QLyHieuThuoc
             // 
             this.panel2.Controls.Add(this.btnLuu);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.btnXoa);
+            this.panel2.Controls.Add(this.btnSua);
             this.panel2.Controls.Add(this.btnThem);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel5);
@@ -141,6 +142,16 @@ namespace QLyHieuThuoc
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1172, 330);
             this.panel2.TabIndex = 0;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Location = new System.Drawing.Point(1053, 270);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(103, 57);
+            this.btnLuu.TabIndex = 17;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // label7
             // 
@@ -152,25 +163,25 @@ namespace QLyHieuThuoc
             this.label7.TabIndex = 16;
             this.label7.Text = "Nhập thông tin thuốc";
             // 
-            // button3
+            // btnXoa
             // 
-            this.button3.Location = new System.Drawing.Point(926, 270);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 57);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Xóa";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnXoa.Location = new System.Drawing.Point(926, 270);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(103, 57);
+            this.btnXoa.TabIndex = 14;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // button2
+            // btnSua
             // 
-            this.button2.Location = new System.Drawing.Point(806, 270);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 57);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Sửa";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnSua.Location = new System.Drawing.Point(806, 270);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(103, 57);
+            this.btnSua.TabIndex = 13;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -468,15 +479,6 @@ namespace QLyHieuThuoc
             this.label1.TabIndex = 0;
             this.label1.Text = "CẬP NHẬT THUỐC";
             // 
-            // btnLuu
-            // 
-            this.btnLuu.Location = new System.Drawing.Point(1053, 270);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(103, 57);
-            this.btnLuu.TabIndex = 17;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            // 
             // fUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -539,8 +541,8 @@ namespace QLyHieuThuoc
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txbHanSuDung;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView dsThuoc;
         private System.Windows.Forms.Label label12;

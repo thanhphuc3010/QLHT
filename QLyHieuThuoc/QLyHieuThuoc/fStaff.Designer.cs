@@ -31,6 +31,8 @@ namespace QLyHieuThuoc
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.drgDSNV = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -46,12 +48,10 @@ namespace QLyHieuThuoc
             this.txbMaNV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.drgDSNV = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drgDSNV)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,6 +71,28 @@ namespace QLyHieuThuoc
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1044, 317);
             this.panel3.TabIndex = 23;
+            // 
+            // drgDSNV
+            // 
+            this.drgDSNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.drgDSNV.Location = new System.Drawing.Point(7, 60);
+            this.drgDSNV.Name = "drgDSNV";
+            this.drgDSNV.RowHeadersWidth = 51;
+            this.drgDSNV.RowTemplate.Height = 24;
+            this.drgDSNV.Size = new System.Drawing.Size(1023, 246);
+            this.drgDSNV.TabIndex = 24;
+            this.drgDSNV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drgDSNV_CellContentClick);
+            this.drgDSNV.MouseUp += new System.Windows.Forms.MouseEventHandler(this.drgDSNV_MouseUp);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(4, 11);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(205, 22);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Danh sách nhân viên";
             // 
             // panel2
             // 
@@ -111,6 +133,7 @@ namespace QLyHieuThuoc
             this.btnLuu.TabIndex = 21;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -224,27 +247,6 @@ namespace QLyHieuThuoc
             this.label1.TabIndex = 1;
             this.label1.Text = "NHÂN VIÊN";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(4, 11);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(205, 22);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Danh sách nhân viên";
-            // 
-            // drgDSNV
-            // 
-            this.drgDSNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.drgDSNV.Location = new System.Drawing.Point(7, 60);
-            this.drgDSNV.Name = "drgDSNV";
-            this.drgDSNV.RowHeadersWidth = 51;
-            this.drgDSNV.RowTemplate.Height = 24;
-            this.drgDSNV.Size = new System.Drawing.Size(1023, 246);
-            this.drgDSNV.TabIndex = 24;
-            this.drgDSNV.MouseUp += new System.Windows.Forms.MouseEventHandler(this.drgDSNV_MouseUp);
-            // 
             // fStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -258,9 +260,9 @@ namespace QLyHieuThuoc
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drgDSNV)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.drgDSNV)).EndInit();
             this.ResumeLayout(false);
 
         }

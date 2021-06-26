@@ -14,14 +14,18 @@ namespace QLyHieuThuoc
         }
 
         SqlConnection con;
+        public Boolean isAddFlag = false;
 
-       
+
         private void fUpdate_Load(object sender, EventArgs e)
         {
             string conString = System.Configuration.ConfigurationManager.ConnectionStrings["QLHT"].ConnectionString;
             con = new SqlConnection(conString);
             con.Open();
             HienThi();
+            loadDataToTextbox();
+            disableAllField();
+            btnLuu.Enabled = false;
         }
 
 
@@ -37,87 +41,276 @@ namespace QLyHieuThuoc
         }
         public void HienThi()
         {
-            string sqlSELECT = " SELECT * FROM tbl_Thuoc";
-            SqlCommand cmd = new SqlCommand(sqlSELECT, con);
-            SqlDataReader dr = cmd.ExecuteReader();
-            DataTable dt = new DataTable();
-            dt.Load(dr);
-            dsThuoc.DataSource = dt;
+            string query = " SELECT * FROM tbl_Thuoc";
+            Database db = new Database();
+            dsThuoc.DataSource = db.excuteQuery(query);
         }
-
+        private void disableAllField()
+        {
+            txbMaThuoc.ReadOnly = true;
+            txbMaThuoc.Enabled = false;
+            txbTenThuoc.ReadOnly = true;
+            txbHamLuong.ReadOnly = true;
+            txbDonVi.ReadOnly = true;
+            txbSoLuong.ReadOnly = true;
+            txbSoDangKy.ReadOnly = true;
+            txbThanhPhan.ReadOnly = true;
+            txbNgaySanXuat.ReadOnly = true;
+            txbHanSuDung.ReadOnly = true;
+            txbNoiSanXuat.ReadOnly = true;
+            txbDonGia.ReadOnly = true;
+            txbDongGoi.ReadOnly = true;
+            txbNhaSanXuat.ReadOnly = true;
+        }
+        private void enableAllField()
+        {
+            txbMaThuoc.ReadOnly = true;
+            txbMaThuoc.Enabled = false;
+            txbTenThuoc.ReadOnly = false;
+            txbHamLuong.ReadOnly = false;
+            txbDonVi.ReadOnly = false;
+            txbSoLuong.ReadOnly = false;
+            txbSoDangKy.ReadOnly = false;
+            txbThanhPhan.ReadOnly = false;
+            txbNgaySanXuat.ReadOnly = false;
+            txbHanSuDung.ReadOnly = false;
+            txbNoiSanXuat.ReadOnly = false;
+            txbDonGia.ReadOnly = false;
+            txbDongGoi.ReadOnly = false;
+            txbNhaSanXuat.ReadOnly = false;
+        }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string sqlINERT = "INSERT INTO tbl_Thuoc VALUES (@MaThuoc, @TenThuoc, @HamLuong, @DonViTinh, @SoLuong, @SoDK, @ThanhPhan, @NgaySX, @HSD, @NoiSX, @DonGIa, @DongGoi, @MaNhaSX)";
-            SqlCommand cmd = new SqlCommand(sqlINERT, con);
-            cmd.Parameters.AddWithValue("MaThuoc", txbMaThuoc.Text);
-            cmd.Parameters.AddWithValue("TenThuoc", txbTenThuoc.Text);
-            cmd.Parameters.AddWithValue("HamLuong", txbHamLuong.Text);
-            cmd.Parameters.AddWithValue("DonViTinh", txbDonVi.Text);
-            cmd.Parameters.AddWithValue("SoLuong", txbSoLuong.Text);
-            cmd.Parameters.AddWithValue("SoDK", txbSoDangKy.Text);
-            cmd.Parameters.AddWithValue("ThanhPhan", txbThanhPhan.Text);
-            cmd.Parameters.AddWithValue("NgaySX", txbNgaySanXuat.Text);
-            cmd.Parameters.AddWithValue("HSD", txbHanSuDung.Text);
-            cmd.Parameters.AddWithValue("NoiSX", txbNoiSanXuat.Text);
-            cmd.Parameters.AddWithValue("DonGia", txbDonGia.Text);
-            cmd.Parameters.AddWithValue("DongGoi", txbDongGoi.Text);
-            cmd.Parameters.AddWithValue("MaNhaSX", txbNhaSanXuat.Text);
-            cmd.ExecuteNonQuery();
-            HienThi();
+            enableAllField();
+            resetAllFieldsBlank();
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+            btnThem.Enabled = false;
+            btnLuu.Enabled = true;
+            isAddFlag = true;
+            txbMaThuoc.Text = autoCreateID();
+            txbMaThuoc.ReadOnly = true;
+            disableDgrEvent();
 
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        public void resetAllFieldsBlank()
         {
-            string sqlEdit = "UPDATE tbl_Thuoc SET MaThuoc=  @MaThuoc,TenThuoc =  @TenThuoc, HamLuong =  @HamLuong,DonViTinh =  @DonViTinh, SoLuong =  @SoLuong, SoDK =  @SoDK, ThanhPhan =  @ThanhPhan, NgaySX = @NgaySX, HSD = @HSD, NoiSX = @NoiSX, DonGia = @DonGIa,DongGoi = @DongGoi, MaNhaSX = @MaNhaSX WHERE MaThuoc = @MaThuoc";
-            SqlCommand cmd = new SqlCommand(sqlEdit, con);
-            cmd.Parameters.AddWithValue("MaThuoc", txbMaThuoc.Text);
-            cmd.Parameters.AddWithValue("TenThuoc", txbTenThuoc.Text);
-            cmd.Parameters.AddWithValue("HamLuong", txbHamLuong.Text);
-            cmd.Parameters.AddWithValue("DonViTinh", txbDonVi.Text);
-            cmd.Parameters.AddWithValue("SoLuong", txbSoLuong.Text);
-            cmd.Parameters.AddWithValue("SoDK", txbSoDangKy.Text);
-            cmd.Parameters.AddWithValue("ThanhPhan", txbThanhPhan.Text);
-            cmd.Parameters.AddWithValue("NgaySX", txbNgaySanXuat.Text);
-            cmd.Parameters.AddWithValue("HSD", txbHanSuDung.Text);
-            cmd.Parameters.AddWithValue("NoiSX", txbNoiSanXuat.Text);
-            cmd.Parameters.AddWithValue("DonGia", txbDonGia.Text);
-            cmd.Parameters.AddWithValue("DongGoi", txbDongGoi.Text);
-            cmd.Parameters.AddWithValue("MaNhaSX", txbNhaSanXuat.Text);
-            cmd.ExecuteNonQuery();
-            HienThi();
-
+            txbMaThuoc.Text = "";
+            txbTenThuoc.Text = "";
+            txbHamLuong.Text = "";
+            txbDonVi.Text = "";
+            txbSoLuong.Text = "";
+            txbSoDangKy.Text = "";
+            txbThanhPhan.Text = "";
+            txbNgaySanXuat.Text = "";
+            txbHanSuDung.Text = "";
+            txbNoiSanXuat.Text = "";
+            txbHanSuDung.Text = "";
+            txbDonGia.Text = "";
+            txbDongGoi.Text = "";
+            txbNhaSanXuat.Text = "";
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            string sqlDELETE = "DELETE FROM tbl_Thuoc WHERE MaThuoc = @MaThuoc";
-            SqlCommand cmd = new SqlCommand(sqlDELETE, con);
-            cmd.Parameters.AddWithValue("MaThuoc", txbMaThuoc.Text);
-            cmd.Parameters.AddWithValue("TenThuoc", txbTenThuoc.Text);
-            cmd.Parameters.AddWithValue("HamLuong", txbHamLuong.Text);
-            cmd.Parameters.AddWithValue("DonViTinh", txbDonVi.Text);
-            cmd.Parameters.AddWithValue("SoLuong", txbSoLuong.Text);
-            cmd.Parameters.AddWithValue("SoDK", txbSoDangKy.Text);
-            cmd.Parameters.AddWithValue("ThanhPhan", txbThanhPhan.Text);
-            cmd.Parameters.AddWithValue("NgaySX", txbNgaySanXuat.Text);
-            cmd.Parameters.AddWithValue("HSD", txbHanSuDung.Text);
-            cmd.Parameters.AddWithValue("NoiSX", txbNoiSanXuat.Text);
-            cmd.Parameters.AddWithValue("DonGia", txbDonGia.Text);
-            cmd.Parameters.AddWithValue("DongGoi", txbDongGoi.Text);
-            cmd.Parameters.AddWithValue("MaNhaSX", txbNhaSanXuat.Text);
-            cmd.ExecuteNonQuery();
-            HienThi();
-        }
-
-        private void dsThuoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+   
 
        
 
-        
+        private void dsThuoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            loadDataToTextbox();
+        }
+        public void loadData()
+        {
+            int i = dsThuoc.CurrentRow.Index;
+            txbMaThuoc.Text = dsThuoc.Rows[i].Cells["MaThuoc"].Value.ToString();
+            txbTenThuoc.Text = dsThuoc.Rows[i].Cells["TenThuoc"].Value.ToString();
+            txbHamLuong.Text = dsThuoc.Rows[i].Cells["HamLuong"].Value.ToString();
+            txbDonVi.Text = dsThuoc.Rows[i].Cells["DonviTinh"].Value.ToString();
+            txbSoLuong.Text = dsThuoc.Rows[i].Cells["SoLuong"].Value.ToString();
+            txbSoDangKy.Text = dsThuoc.Rows[i].Cells["SoDK"].Value.ToString();
+            txbThanhPhan.Text = dsThuoc.Rows[i].Cells["ThanhPhan"].Value.ToString();
+            txbNgaySanXuat.Text = dsThuoc.Rows[i].Cells["NgaySX"].Value.ToString();
+            txbHanSuDung.Text = dsThuoc.Rows[i].Cells["HSD"].Value.ToString();
+            txbNoiSanXuat.Text = dsThuoc.Rows[i].Cells["NoiSX"].Value.ToString();
+            txbDonGia.Text = dsThuoc.Rows[i].Cells["DonGia"].Value.ToString();
+            txbDongGoi.Text = dsThuoc.Rows[i].Cells["DongGoi"].Value.ToString();
+            txbNhaSanXuat.Text = dsThuoc.Rows[i].Cells["MaNhaSX"].Value.ToString();
+        }
+
+        private void dsThuoc_MouseUp(object sender, MouseEventArgs e)
+        {
+            loadData();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            enableAllField();
+            txbMaThuoc.Enabled = false;
+            btnThem.Enabled = false;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+            btnLuu.Enabled = true;
+            disableDgrEvent();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string query = "DELETE FROM tbl_Thuoc WHERE MaThuoc = @MaThuoc";
+
+            Database db = new Database();
+
+            int rows = db.excuteNonQuery(query, new object[] { txbTenThuoc.Text });
+
+            HienThi();
+        }
+        private Boolean checkRequired()
+        {
+            if (txbTenThuoc.Text == "" || txbDonVi.Text == "" || txbNgaySanXuat.Text =="" || txbHanSuDung.Text =="" )
+            {
+                return false;
+            }
+            else return true;
+        }
+        private void disableDgrEvent()
+        {
+           dsThuoc.CellContentClick -= dsThuoc_CellContentClick;
+
+            dsThuoc.MouseUp -= dsThuoc_MouseUp;
+        }
+
+        private void enableDgrEvent()
+        {
+            dsThuoc.CellContentClick += dsThuoc_CellContentClick;
+
+            dsThuoc.MouseUp += dsThuoc_MouseUp;
+        }
+        public void loadDataToTextbox()
+        {
+            int i = dsThuoc.CurrentRow.Index;
+            txbTenThuoc.Text = dsThuoc.Rows[i].Cells["TenThuoc"].Value.ToString();
+            txbMaThuoc.Text = dsThuoc.Rows[i].Cells["MaThuoc"].Value.ToString();
+            txbHamLuong.Text = dsThuoc.Rows[i].Cells["HamLuong"].Value.ToString();
+            txbDonVi.Text = dsThuoc.Rows[i].Cells["DonviTinh"].Value.ToString();
+            txbSoLuong.Text = dsThuoc.Rows[i].Cells["SoLuong"].Value.ToString();
+            txbSoDangKy.Text = dsThuoc.Rows[i].Cells["SoDK"].Value.ToString();
+            txbThanhPhan.Text = dsThuoc.Rows[i].Cells["ThanhPhan"].Value.ToString();
+            txbNgaySanXuat.Text = dsThuoc.Rows[i].Cells["NgaySX"].Value.ToString();
+            txbHanSuDung.Text = dsThuoc.Rows[i].Cells["HSD"].Value.ToString();
+            txbNoiSanXuat.Text = dsThuoc.Rows[i].Cells["NoiSX"].Value.ToString();
+            txbDonGia.Text = dsThuoc.Rows[i].Cells["DonGia"].Value.ToString();
+            txbDongGoi.Text = dsThuoc.Rows[i].Cells["DongGoi"].Value.ToString();
+            txbNhaSanXuat.Text = dsThuoc.Rows[i].Cells["MaNhaSX"].Value.ToString();
+        }
+        private string autoCreateID()
+        {
+            string query = "SELECT TOP 1 MaThuoc FROM tbl_Thuoc ORDER BY MaThuoc DESC";
+            DataTable data = new DataTable();
+            Database db = new Database();
+            data = db.excuteQuery(query);
+
+            string lastID = data.Rows[0]["MaThuoc"].ToString();
+
+            string index = lastID.Substring(2);
+
+            int key = Convert.ToInt16(index) + 1;
+
+            return formatStringNumber(key);
+        }
+        private string formatStringNumber(int i)
+        {
+            string result;
+            if (i < 10)
+            {
+                result = "T" + "000" + i.ToString().Trim();
+            }
+            else if (i < 100)
+            {
+                result = "T" + "00" + i.ToString().Trim();
+            }
+            else if (i < 1000)
+            {
+                result = "T" + "0" + i.ToString().Trim();
+            }
+            else result = "T" + i.ToString().Trim();
+
+            return result;
+
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if (isAddFlag == true)
+            {
+
+
+                string query = "INSERT INTO tbl_Thuoc ( MaThuoc, TenThuoc, HamLuong, DonviTinh, SoLuong, SoDK, ThanhPhan, NgaySX, HSD, NoiSX, DonGia, DongGoi, MaNhaSX ) VALUES ( @MaThuoc , @TenThuoc , @HamLuong , @DonviTinh , @SoLuong , @SoDK , @ThanhPhan , @NgaySX , @HSD , @NoiSX , @DonGia , @DongGoi , @MaNhaSX )";
+
+                Database db = new Database();
+
+                if (checkRequired())
+                {
+                    int rows = db.excuteNonQuery(query, new object[] { txbMaThuoc.Text, txbTenThuoc.Text, txbHamLuong.Text, txbDonVi.Text, txbSoLuong.Text, txbSoDangKy.Text, txbThanhPhan.Text, txbNgaySanXuat.Text, txbHanSuDung.Text, txbNoiSanXuat.Text, txbDonGia.Text, txbDongGoi.Text, txbNhaSanXuat });
+                    if (rows == 1)
+                    {
+                        MessageBox.Show("Thêm thuốc mới thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm câu hỏi thất bại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+
+                    disableAllField();
+
+                    isAddFlag = false;
+
+                    btnThem.Enabled = true;
+
+                    btnXoa.Enabled = true;
+
+                    btnSua.Enabled = true;
+
+                    btnLuu.Enabled = false;
+
+                    enableDgrEvent();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+
+
+                string query = "UPDATE tbl_Thuoc SET TenThuoc = @TenThuoc  , HamLuong = @HamLuong , DonviTinh = @DonviTinh , SoLuong = @SoLuong , SoDK = @SoDK , ThanhPhan = @ThanhPhan , NgaySX = @NgaySX , HSD = @HSD , NoiSX = @NoiSX , DonGia = @DonGia , DongGoi = @DongGoi  WHERE MaThuoc = @MaThuoc ";
+
+
+
+
+                Database db = new Database();
+
+                int rows = db.excuteNonQuery(query, new object[] { txbMaThuoc.Text, txbTenThuoc.Text, txbHamLuong.Text, txbDonVi.Text, txbSoLuong.Text, txbSoDangKy.Text, txbThanhPhan.Text, txbNgaySanXuat.Text, txbHanSuDung.Text, txbNoiSanXuat.Text, txbDonGia.Text, txbDongGoi.Text, txbNhaSanXuat });
+
+                disableAllField();
+
+                HienThi();
+
+                btnThem.Enabled = true;
+
+                btnXoa.Enabled = true;
+
+                btnSua.Enabled = true;
+
+                btnLuu.Enabled = false;
+
+                enableDgrEvent();
+            }
+        }
     }
+
+
+
+
 }
