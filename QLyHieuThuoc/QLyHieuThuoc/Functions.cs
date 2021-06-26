@@ -64,5 +64,14 @@ namespace QLyHieuThuoc
             }
             return h;
         }
+
+        public static bool CheckKey(string query)
+        {
+            Database db = new Database();
+            DataTable data = db.excuteQuery(query);
+            if (data.Rows.Count > 0)
+                return true;
+            else return false;
+        }
     }
 }

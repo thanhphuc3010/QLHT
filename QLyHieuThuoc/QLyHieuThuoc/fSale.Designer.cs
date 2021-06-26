@@ -63,7 +63,7 @@ namespace QLyHieuThuoc
             this.btnThem = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txbIn = new System.Windows.Forms.Button();
-            this.txbTongTien = new System.Windows.Forms.TextBox();
+            this.txtSeltment = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
@@ -71,6 +71,9 @@ namespace QLyHieuThuoc
             this.dtpDueDate = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.txtTax = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtTotalAmout = new System.Windows.Forms.TextBox();
+            this.txtTaxAmount = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrMedicineList)).BeginInit();
             this.panel2.SuspendLayout();
@@ -109,6 +112,7 @@ namespace QLyHieuThuoc
             this.dgrMedicineList.RowTemplate.Height = 24;
             this.dgrMedicineList.Size = new System.Drawing.Size(924, 272);
             this.dgrMedicineList.TabIndex = 5;
+            this.dgrMedicineList.DoubleClick += new System.EventHandler(this.dgrMedicineList_DoubleClick);
             // 
             // panel2
             // 
@@ -159,7 +163,7 @@ namespace QLyHieuThuoc
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(369, 65);
+            this.label12.Location = new System.Drawing.Point(361, 65);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(66, 20);
             this.label12.TabIndex = 23;
@@ -167,7 +171,7 @@ namespace QLyHieuThuoc
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(450, 33);
+            this.txtQuantity.Location = new System.Drawing.Point(441, 33);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(189, 22);
             this.txtQuantity.TabIndex = 22;
@@ -177,7 +181,7 @@ namespace QLyHieuThuoc
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(369, 33);
+            this.label11.Location = new System.Drawing.Point(361, 33);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(74, 20);
             this.label11.TabIndex = 21;
@@ -402,8 +406,11 @@ namespace QLyHieuThuoc
             // panel3
             // 
             this.panel3.Controls.Add(this.txbIn);
+            this.panel3.Controls.Add(this.txtTotalAmout);
+            this.panel3.Controls.Add(this.txtTaxAmount);
             this.panel3.Controls.Add(this.txtTax);
-            this.panel3.Controls.Add(this.txbTongTien);
+            this.panel3.Controls.Add(this.txtSeltment);
+            this.panel3.Controls.Add(this.label19);
             this.panel3.Controls.Add(this.label15);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.btnHuy);
@@ -422,22 +429,22 @@ namespace QLyHieuThuoc
             this.txbIn.Text = "In";
             this.txbIn.UseVisualStyleBackColor = true;
             // 
-            // txbTongTien
+            // txtSeltment
             // 
-            this.txbTongTien.Location = new System.Drawing.Point(809, 15);
-            this.txbTongTien.Name = "txbTongTien";
-            this.txbTongTien.Size = new System.Drawing.Size(139, 22);
-            this.txbTongTien.TabIndex = 25;
+            this.txtSeltment.Location = new System.Drawing.Point(809, 83);
+            this.txtSeltment.Name = "txtSeltment";
+            this.txtSeltment.Size = new System.Drawing.Size(139, 22);
+            this.txtSeltment.TabIndex = 25;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(704, 29);
+            this.label6.Location = new System.Drawing.Point(637, 82);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 20);
+            this.label6.Size = new System.Drawing.Size(166, 20);
             this.label6.TabIndex = 24;
-            this.label6.Text = "Tổng tiền";
+            this.label6.Text = "Tổng tiền thanh toán:";
             // 
             // label18
             // 
@@ -479,18 +486,42 @@ namespace QLyHieuThuoc
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(450, 29);
+            this.label15.Location = new System.Drawing.Point(637, 53);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(51, 20);
+            this.label15.Size = new System.Drawing.Size(88, 20);
             this.label15.TabIndex = 24;
-            this.label15.Text = "Thuế:";
+            this.label15.Text = "Thuế (%): ";
             // 
             // txtTax
             // 
-            this.txtTax.Location = new System.Drawing.Point(524, 15);
+            this.txtTax.Location = new System.Drawing.Point(741, 50);
             this.txtTax.Name = "txtTax";
-            this.txtTax.Size = new System.Drawing.Size(139, 22);
+            this.txtTax.Size = new System.Drawing.Size(43, 22);
             this.txtTax.TabIndex = 25;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(637, 24);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(88, 20);
+            this.label19.TabIndex = 24;
+            this.label19.Text = "Tổng tiền: ";
+            // 
+            // txtTotalAmout
+            // 
+            this.txtTotalAmout.Location = new System.Drawing.Point(809, 22);
+            this.txtTotalAmout.Name = "txtTotalAmout";
+            this.txtTotalAmout.Size = new System.Drawing.Size(139, 22);
+            this.txtTotalAmout.TabIndex = 25;
+            // 
+            // txtTaxAmount
+            // 
+            this.txtTaxAmount.Location = new System.Drawing.Point(808, 50);
+            this.txtTaxAmount.Name = "txtTaxAmount";
+            this.txtTaxAmount.Size = new System.Drawing.Size(140, 22);
+            this.txtTaxAmount.TabIndex = 25;
             // 
             // fSale
             // 
@@ -548,7 +579,7 @@ namespace QLyHieuThuoc
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txbTongTien;
+        private System.Windows.Forms.TextBox txtSeltment;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAddMedicine;
         private System.Windows.Forms.Button txbIn;
@@ -560,5 +591,8 @@ namespace QLyHieuThuoc
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtTax;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtTotalAmout;
+        private System.Windows.Forms.TextBox txtTaxAmount;
+        private System.Windows.Forms.Label label19;
     }
 }

@@ -15,6 +15,7 @@ namespace QLyHieuThuoc
     public partial class fSale : Form
     {
         string invoiceID = "";
+        double totalAmount = 0;
         public fSale()
         {
             InitializeComponent();
@@ -37,6 +38,13 @@ namespace QLyHieuThuoc
 
             insertInvoiceToDB();
 
+            txtAmount.ReadOnly = true;
+
+            txtTax.Text = "5";
+
+            txtTotalAmout.Text = totalAmount.ToString();
+
+            txtTotalAmout.ReadOnly = true;
         }
 
         public static string CreateKey(string tiento)
@@ -71,7 +79,7 @@ namespace QLyHieuThuoc
 
             //int tax = Convert.ToInt16(txtTax.Text);
 
-            int row = db.excuteNonQuery(query, new object[] { invoiceID, dptInvoiceDate.Value, dtpDueDate.Value });
+            int row = db.excuteNonQuery(query, new object[] { invoiceID.Trim(), dptInvoiceDate.Value, dtpDueDate.Value });
         }
 
         private void txbThue_TextChanged(object sender, EventArgs e)
@@ -160,26 +168,70 @@ namespace QLyHieuThuoc
             int row = db.excuteNonQuery(query, new object[] { id });
         }
 
-        private void checkQuantity ()
-        {
-
-        }
-
         private void btnAddMedicine_Click(object sender, EventArgs e)
         {
             string MedicineID = cbMedicineId.SelectedValue.ToString();
             int quantity = Convert.ToInt32(txtQuantity.Text);
             int price = Convert.ToInt32(txtPrice.Text);
 
-            string query = "INSERT INTO tbl_CTHD (SoHD, MaThuoc, SoLuong, DonGia) VALUES ( @SoHD , @MaThuoc , @SoLuong , @DonGia )";
+            //Start check inventory
+            string medicineID = cbMedicineId.SelectedValue.ToString();
+            string query = "SELECT SoLuong FROM tbl_Thuoc WHERE MaThuoc = '" + medicineID + "'";
 
             Database db = new Database();
+
+            DataTable data = db.excuteQuery(query);
+
+            double inventory = Convert.ToDouble(data.Rows[0]["SoLuong"]);
+
+            if (Convert.ToDouble(txtQuantity.Text) > inventory)
+            {
+                MessageBox.Show("Số lượng mặt hàng này chỉ còn " + inventory, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtQuantity.Text = "";
+                txtQuantity.Focus();
+                return;
+            }
+            string mathuoc = cbMedicineId.SelectedValue.ToString();
+            // Start check duplicate medicine
+            query = "SELECT * FROM tbl_CTHD WHERE SoHD = '" + invoiceID + "' AND MaThuoc = '" + mathuoc + "'";
+            if (Functions.CheckKey(query))
+            {
+                MessageBox.Show("Mã hàng này đã tồn tại, bạn phải chọn mã hàng khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cbMedicineId.Focus();
+                cbMedicineId.SelectedIndex = -1;
+                return;
+            }
+
+            query = "INSERT INTO tbl_CTHD (SoHD, MaThuoc, SoLuong, DonGia) VALUES ( @SoHD , @MaThuoc , @SoLuong , @DonGia )";
 
             //int tax = Convert.ToInt16(txtTax.Text);
 
             int row = db.excuteNonQuery(query, new object[] { invoiceID, MedicineID, quantity, price });
 
+            totalAmount = totalAmount + Convert.ToDouble(txtAmount.Text);
+
+            txtTotalAmout.Text = totalAmount.ToString();
+
+            double tax = Convert.ToDouble(txtTax.Text) / 100 * totalAmount;
+
+            txtTaxAmount.Text = tax.ToString();
+
+            txtSeltment.Text = (totalAmount + tax).ToString();
+
+            resetMedicines();
+
             loadDetailInvoice();
+
+        }
+
+
+        private void resetMedicines()
+        {
+            cbMedicineId.SelectedIndex = -1;
+            txtPrice.Text = "";
+            txtAmount.Text = "";
+            txtUnit.Text = "";
+            txtQuantity.Text = "";
         }
 
         private void loadDetailInvoice()
@@ -220,6 +272,12 @@ namespace QLyHieuThuoc
 
         }
 
+
+
+
+
+
+
         private void fSale_FormClosing(object sender, FormClosingEventArgs e)
         {
             string message = "Bạn có muốn đóng cửa sổ, đóng cửa sổ khi không lưu sẽ không ghi nhận hoá đơn. Bạn đồng ý chứ ?";
@@ -240,6 +298,60 @@ namespace QLyHieuThuoc
             {
                 e.Cancel = true;
                 return;
+            }
+        }
+
+        private void dgrMedicineList_DoubleClick(object sender, EventArgs e)
+        {
+            string MaHangxoa, sql, query;
+
+            query = "SELECT * FROM tbl_CTHD WHERE SoHD = '" + invoiceID + "'";
+
+            Database db = new Database();
+
+            DataTable tblCTHD = db.excuteQuery(query);
+            
+            Double ThanhTienxoa, SoLuongxoa, sl, newQuantity, tong, tongmoi;
+
+            if (tblCTHD.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if ((MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+            {
+                //Xóa hàng và cập nhật lại số lượng hàng 
+                MaHangxoa = dgrMedicineList.CurrentRow.Cells["MaThuoc"].Value.ToString();
+
+                SoLuongxoa = Convert.ToDouble(dgrMedicineList.CurrentRow.Cells["SoLuong"].Value.ToString());
+
+                ThanhTienxoa = Convert.ToDouble(dgrMedicineList.CurrentRow.Cells["Thành Tiền"].Value.ToString());
+
+                sql = "DELETE tbl_CTHD WHERE SoHD = '" + txtInvoiceId.Text + "' AND MaThuoc = '" + MaHangxoa + "'";
+
+                db.excuteNonQuery(sql);
+
+                // Cập nhật lại số lượng cho các mặt hàng
+                sql = "SELECT SoLuong FROM tbl_Thuoc WHERE MaThuoc = '" + MaHangxoa + "'";
+
+                DataTable data = db.excuteQuery(sql);
+
+                
+
+                sl = Convert.ToDouble(data.Rows[0]["SoLuong"]);
+
+                newQuantity = sl + SoLuongxoa;
+
+                sql = "UPDATE tblHang SET SoLuong =" + newQuantity + " WHERE MaHang= N'" + MaHangxoa + "'";
+                Functions.RunSQL(sql);
+                // Cập nhật lại tổng tiền cho hóa đơn bán
+                tong = Convert.ToDouble(Functions.GetFieldValues("SELECT TongTien FROM tblHDBan WHERE MaHDBan = N'" + txtMaHDBan.Text + "'"));
+                tongmoi = tong - ThanhTienxoa;
+                sql = "UPDATE tblHDBan SET TongTien =" + tongmoi + " WHERE MaHDBan = N'" + txtMaHDBan.Text + "'";
+                Functions.RunSQL(sql);
+                txtTongTien.Text = tongmoi.ToString();
+                lblBangChu.Text = "Bằng chữ: " + Functions.ChuyenSoSangChu(tongmoi.ToString());
+                LoadDataGridView();
             }
         }
     }
