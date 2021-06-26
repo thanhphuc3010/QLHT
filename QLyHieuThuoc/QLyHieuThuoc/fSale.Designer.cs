@@ -31,34 +31,32 @@ namespace QLyHieuThuoc
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.HDBan = new System.Windows.Forms.DataGridView();
+            this.dgrMedicineList = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.txbDonGia = new System.Windows.Forms.TextBox();
+            this.btnAddMedicine = new System.Windows.Forms.Button();
+            this.cbMedicineId = new System.Windows.Forms.ComboBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.txbSoLuong = new System.Windows.Forms.TextBox();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txbDonVi = new System.Windows.Forms.TextBox();
+            this.txtUnit = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txbTenThuoc = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txbTenKH = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.txbTenNV = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.cbMaNV = new System.Windows.Forms.ComboBox();
+            this.cbStaffId = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.cbMaKH = new System.Windows.Forms.ComboBox();
+            this.cbCustomerId = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateNgayHD = new System.Windows.Forms.DateTimePicker();
-            this.txbThue = new System.Windows.Forms.TextBox();
+            this.dptInvoiceDate = new System.Windows.Forms.DateTimePicker();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txbSoHD = new System.Windows.Forms.TextBox();
+            this.txtInvoiceId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnHuy = new System.Windows.Forms.Button();
@@ -67,8 +65,14 @@ namespace QLyHieuThuoc
             this.txbIn = new System.Windows.Forms.Button();
             this.txbTongTien = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtAmount = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dtpDueDate = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtTax = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.HDBan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrMedicineList)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -77,7 +81,7 @@ namespace QLyHieuThuoc
             // panel1
             // 
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.HDBan);
+            this.panel1.Controls.Add(this.dgrMedicineList);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.label1);
@@ -96,119 +100,105 @@ namespace QLyHieuThuoc
             this.label13.TabIndex = 25;
             this.label13.Text = "Chi tiết hóa đơn";
             // 
-            // HDBan
+            // dgrMedicineList
             // 
-            this.HDBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.HDBan.Location = new System.Drawing.Point(24, 394);
-            this.HDBan.Name = "HDBan";
-            this.HDBan.RowHeadersWidth = 51;
-            this.HDBan.RowTemplate.Height = 24;
-            this.HDBan.Size = new System.Drawing.Size(924, 272);
-            this.HDBan.TabIndex = 5;
+            this.dgrMedicineList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrMedicineList.Location = new System.Drawing.Point(24, 394);
+            this.dgrMedicineList.Name = "dgrMedicineList";
+            this.dgrMedicineList.RowHeadersWidth = 51;
+            this.dgrMedicineList.RowTemplate.Height = 24;
+            this.dgrMedicineList.Size = new System.Drawing.Size(924, 272);
+            this.dgrMedicineList.TabIndex = 5;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.comboBox3);
-            this.panel2.Controls.Add(this.txbDonGia);
+            this.panel2.Controls.Add(this.btnAddMedicine);
+            this.panel2.Controls.Add(this.cbMedicineId);
+            this.panel2.Controls.Add(this.txtAmount);
+            this.panel2.Controls.Add(this.txtPrice);
+            this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.txbSoLuong);
+            this.panel2.Controls.Add(this.txtQuantity);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.txbDonVi);
+            this.panel2.Controls.Add(this.txtUnit);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.txbTenThuoc);
-            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(24, 187);
+            this.panel2.Location = new System.Drawing.Point(24, 233);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(936, 167);
+            this.panel2.Size = new System.Drawing.Size(936, 121);
             this.panel2.TabIndex = 4;
             // 
-            // button1
+            // btnAddMedicine
             // 
-            this.button1.Location = new System.Drawing.Point(801, 116);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 48);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Thêm sản phẩm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddMedicine.Location = new System.Drawing.Point(735, 65);
+            this.btnAddMedicine.Name = "btnAddMedicine";
+            this.btnAddMedicine.Size = new System.Drawing.Size(123, 48);
+            this.btnAddMedicine.TabIndex = 26;
+            this.btnAddMedicine.Text = "Thêm sản phẩm";
+            this.btnAddMedicine.UseVisualStyleBackColor = true;
+            this.btnAddMedicine.Click += new System.EventHandler(this.btnAddMedicine_Click);
             // 
-            // comboBox3
+            // cbMedicineId
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(164, 39);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(189, 24);
-            this.comboBox3.TabIndex = 18;
+            this.cbMedicineId.FormattingEnabled = true;
+            this.cbMedicineId.Location = new System.Drawing.Point(99, 33);
+            this.cbMedicineId.Name = "cbMedicineId";
+            this.cbMedicineId.Size = new System.Drawing.Size(189, 24);
+            this.cbMedicineId.TabIndex = 18;
+            this.cbMedicineId.SelectedIndexChanged += new System.EventHandler(this.cbMedicineId_SelectedIndexChanged);
             // 
-            // txbDonGia
+            // txtPrice
             // 
-            this.txbDonGia.Location = new System.Drawing.Point(735, 67);
-            this.txbDonGia.Name = "txbDonGia";
-            this.txbDonGia.Size = new System.Drawing.Size(189, 22);
-            this.txbDonGia.TabIndex = 24;
+            this.txtPrice.Location = new System.Drawing.Point(441, 65);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(189, 22);
+            this.txtPrice.TabIndex = 24;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(583, 67);
+            this.label12.Location = new System.Drawing.Point(369, 65);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(66, 20);
             this.label12.TabIndex = 23;
             this.label12.Text = "Đơn giá";
             // 
-            // txbSoLuong
+            // txtQuantity
             // 
-            this.txbSoLuong.Location = new System.Drawing.Point(735, 39);
-            this.txbSoLuong.Name = "txbSoLuong";
-            this.txbSoLuong.Size = new System.Drawing.Size(189, 22);
-            this.txbSoLuong.TabIndex = 22;
+            this.txtQuantity.Location = new System.Drawing.Point(450, 33);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(189, 22);
+            this.txtQuantity.TabIndex = 22;
+            this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(583, 39);
+            this.label11.Location = new System.Drawing.Point(369, 33);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(74, 20);
             this.label11.TabIndex = 21;
             this.label11.Text = "Số lượng";
             // 
-            // txbDonVi
+            // txtUnit
             // 
-            this.txbDonVi.Location = new System.Drawing.Point(164, 95);
-            this.txbDonVi.Name = "txbDonVi";
-            this.txbDonVi.Size = new System.Drawing.Size(189, 22);
-            this.txbDonVi.TabIndex = 20;
+            this.txtUnit.Location = new System.Drawing.Point(99, 65);
+            this.txtUnit.Name = "txtUnit";
+            this.txtUnit.Size = new System.Drawing.Size(189, 22);
+            this.txtUnit.TabIndex = 20;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(5, 93);
+            this.label10.Location = new System.Drawing.Point(5, 65);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(88, 20);
             this.label10.TabIndex = 19;
             this.label10.Text = "Đơn vị tính";
-            // 
-            // txbTenThuoc
-            // 
-            this.txbTenThuoc.Location = new System.Drawing.Point(164, 67);
-            this.txbTenThuoc.Name = "txbTenThuoc";
-            this.txbTenThuoc.Size = new System.Drawing.Size(189, 22);
-            this.txbTenThuoc.TabIndex = 18;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(5, 65);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 20);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Tên thuốc";
             // 
             // label8
             // 
@@ -232,31 +222,33 @@ namespace QLyHieuThuoc
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.txbTenKH);
+            this.panel4.Controls.Add(this.txtAddress);
             this.panel4.Controls.Add(this.label16);
-            this.panel4.Controls.Add(this.txbTenNV);
-            this.panel4.Controls.Add(this.label15);
-            this.panel4.Controls.Add(this.cbMaNV);
+            this.panel4.Controls.Add(this.cbStaffId);
             this.panel4.Controls.Add(this.label14);
-            this.panel4.Controls.Add(this.cbMaKH);
+            this.panel4.Controls.Add(this.cbCustomerId);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.dateNgayHD);
-            this.panel4.Controls.Add(this.txbThue);
+            this.panel4.Controls.Add(this.dtpDueDate);
+            this.panel4.Controls.Add(this.dptInvoiceDate);
+            this.panel4.Controls.Add(this.txtEmail);
+            this.panel4.Controls.Add(this.label17);
+            this.panel4.Controls.Add(this.txtPhoneNumber);
+            this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.txbSoHD);
+            this.panel4.Controls.Add(this.txtInvoiceId);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(24, 45);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(936, 136);
             this.panel4.TabIndex = 2;
             // 
-            // txbTenKH
+            // txtAddress
             // 
-            this.txbTenKH.Location = new System.Drawing.Point(735, 42);
-            this.txbTenKH.Name = "txbTenKH";
-            this.txbTenKH.Size = new System.Drawing.Size(189, 22);
-            this.txbTenKH.TabIndex = 21;
+            this.txtAddress.Location = new System.Drawing.Point(735, 42);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(189, 22);
+            this.txtAddress.TabIndex = 21;
             // 
             // label16
             // 
@@ -264,52 +256,38 @@ namespace QLyHieuThuoc
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(583, 42);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(127, 20);
+            this.label16.Size = new System.Drawing.Size(66, 20);
             this.label16.TabIndex = 20;
-            this.label16.Text = "Tên khách hàng";
+            this.label16.Text = "Địa chỉ:";
             // 
-            // txbTenNV
+            // cbStaffId
             // 
-            this.txbTenNV.Location = new System.Drawing.Point(164, 96);
-            this.txbTenNV.Name = "txbTenNV";
-            this.txbTenNV.Size = new System.Drawing.Size(189, 22);
-            this.txbTenNV.TabIndex = 19;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(5, 96);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(113, 20);
-            this.label15.TabIndex = 18;
-            this.label15.Text = "Tên nhân viên";
-            // 
-            // cbMaNV
-            // 
-            this.cbMaNV.FormattingEnabled = true;
-            this.cbMaNV.Location = new System.Drawing.Point(164, 66);
-            this.cbMaNV.Name = "cbMaNV";
-            this.cbMaNV.Size = new System.Drawing.Size(189, 24);
-            this.cbMaNV.TabIndex = 17;
+            this.cbStaffId.FormattingEnabled = true;
+            this.cbStaffId.Location = new System.Drawing.Point(164, 98);
+            this.cbStaffId.Name = "cbStaffId";
+            this.cbStaffId.Size = new System.Drawing.Size(189, 24);
+            this.cbStaffId.TabIndex = 17;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(5, 70);
+            this.label14.Location = new System.Drawing.Point(5, 102);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(108, 20);
+            this.label14.Size = new System.Drawing.Size(88, 20);
             this.label14.TabIndex = 16;
-            this.label14.Text = "Mã nhân viên";
+            this.label14.Text = "Nhân viên:";
             // 
-            // cbMaKH
+            // cbCustomerId
             // 
-            this.cbMaKH.FormattingEnabled = true;
-            this.cbMaKH.Location = new System.Drawing.Point(735, 12);
-            this.cbMaKH.Name = "cbMaKH";
-            this.cbMaKH.Size = new System.Drawing.Size(189, 24);
-            this.cbMaKH.TabIndex = 15;
+            this.cbCustomerId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbCustomerId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbCustomerId.FormattingEnabled = true;
+            this.cbCustomerId.Location = new System.Drawing.Point(735, 12);
+            this.cbCustomerId.Name = "cbCustomerId";
+            this.cbCustomerId.Size = new System.Drawing.Size(189, 24);
+            this.cbCustomerId.TabIndex = 15;
+            this.cbCustomerId.SelectedIndexChanged += new System.EventHandler(this.cbCustomerId_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -317,23 +295,44 @@ namespace QLyHieuThuoc
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(583, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(122, 20);
+            this.label5.Size = new System.Drawing.Size(132, 20);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Mã khách hàng";
+            this.label5.Text = "Tên khách hàng:";
             // 
-            // dateNgayHD
+            // dptInvoiceDate
             // 
-            this.dateNgayHD.Location = new System.Drawing.Point(164, 38);
-            this.dateNgayHD.Name = "dateNgayHD";
-            this.dateNgayHD.Size = new System.Drawing.Size(189, 22);
-            this.dateNgayHD.TabIndex = 10;
+            this.dptInvoiceDate.CustomFormat = "dd/MM/yyyy";
+            this.dptInvoiceDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dptInvoiceDate.Location = new System.Drawing.Point(164, 38);
+            this.dptInvoiceDate.Name = "dptInvoiceDate";
+            this.dptInvoiceDate.Size = new System.Drawing.Size(189, 22);
+            this.dptInvoiceDate.TabIndex = 10;
             // 
-            // txbThue
+            // txtEmail
             // 
-            this.txbThue.Location = new System.Drawing.Point(735, 72);
-            this.txbThue.Name = "txbThue";
-            this.txbThue.Size = new System.Drawing.Size(189, 22);
-            this.txbThue.TabIndex = 5;
+            this.txtEmail.Location = new System.Drawing.Point(735, 100);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(189, 22);
+            this.txtEmail.TabIndex = 5;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txbThue_TextChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(583, 100);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(56, 20);
+            this.label17.TabIndex = 4;
+            this.label17.Text = "Email:";
+            // 
+            // txtPhoneNumber
+            // 
+            this.txtPhoneNumber.Location = new System.Drawing.Point(735, 72);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(189, 22);
+            this.txtPhoneNumber.TabIndex = 5;
+            this.txtPhoneNumber.TextChanged += new System.EventHandler(this.txbThue_TextChanged);
             // 
             // label4
             // 
@@ -341,9 +340,9 @@ namespace QLyHieuThuoc
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(583, 72);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 20);
+            this.label4.Size = new System.Drawing.Size(106, 20);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Thuế";
+            this.label4.Text = "Số điện thoại";
             // 
             // label3
             // 
@@ -355,13 +354,12 @@ namespace QLyHieuThuoc
             this.label3.TabIndex = 2;
             this.label3.Text = "Ngày bán";
             // 
-            // txbSoHD
+            // txtInvoiceId
             // 
-            this.txbSoHD.Location = new System.Drawing.Point(164, 12);
-            this.txbSoHD.Name = "txbSoHD";
-            this.txbSoHD.Size = new System.Drawing.Size(189, 22);
-            this.txbSoHD.TabIndex = 1;
-
+            this.txtInvoiceId.Location = new System.Drawing.Point(164, 12);
+            this.txtInvoiceId.Name = "txtInvoiceId";
+            this.txtInvoiceId.Size = new System.Drawing.Size(189, 22);
+            this.txtInvoiceId.TabIndex = 1;
             // 
             // label2
             // 
@@ -404,7 +402,9 @@ namespace QLyHieuThuoc
             // panel3
             // 
             this.panel3.Controls.Add(this.txbIn);
+            this.panel3.Controls.Add(this.txtTax);
             this.panel3.Controls.Add(this.txbTongTien);
+            this.panel3.Controls.Add(this.label15);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.btnHuy);
             this.panel3.Controls.Add(this.btnThem);
@@ -415,7 +415,7 @@ namespace QLyHieuThuoc
             // 
             // txbIn
             // 
-            this.txbIn.Location = new System.Drawing.Point(336, 46);
+            this.txbIn.Location = new System.Drawing.Point(305, 46);
             this.txbIn.Name = "txbIn";
             this.txbIn.Size = new System.Drawing.Size(123, 42);
             this.txbIn.TabIndex = 26;
@@ -425,11 +425,9 @@ namespace QLyHieuThuoc
             // txbTongTien
             // 
             this.txbTongTien.Location = new System.Drawing.Point(809, 15);
-            this.txbTongTien.Multiline = true;
             this.txbTongTien.Name = "txbTongTien";
-            this.txbTongTien.Size = new System.Drawing.Size(139, 34);
+            this.txbTongTien.Size = new System.Drawing.Size(139, 22);
             this.txbTongTien.TabIndex = 25;
-
             // 
             // label6
             // 
@@ -440,7 +438,59 @@ namespace QLyHieuThuoc
             this.label6.Size = new System.Drawing.Size(78, 20);
             this.label6.TabIndex = 24;
             this.label6.Text = "Tổng tiền";
-
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(645, 33);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(92, 20);
+            this.label18.TabIndex = 23;
+            this.label18.Text = "Thành tiền:";
+            // 
+            // txtAmount
+            // 
+            this.txtAmount.Location = new System.Drawing.Point(736, 33);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(189, 22);
+            this.txtAmount.TabIndex = 24;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(5, 72);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(111, 20);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Ngày đáo hạn";
+            // 
+            // dtpDueDate
+            // 
+            this.dtpDueDate.CustomFormat = "dd/MM/yyyy";
+            this.dtpDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDueDate.Location = new System.Drawing.Point(164, 70);
+            this.dtpDueDate.Name = "dtpDueDate";
+            this.dtpDueDate.Size = new System.Drawing.Size(189, 22);
+            this.dtpDueDate.TabIndex = 10;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(450, 29);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(51, 20);
+            this.label15.TabIndex = 24;
+            this.label15.Text = "Thuế:";
+            // 
+            // txtTax
+            // 
+            this.txtTax.Location = new System.Drawing.Point(524, 15);
+            this.txtTax.Name = "txtTax";
+            this.txtTax.Size = new System.Drawing.Size(139, 22);
+            this.txtTax.TabIndex = 25;
             // 
             // fSale
             // 
@@ -451,10 +501,11 @@ namespace QLyHieuThuoc
             this.Controls.Add(this.panel1);
             this.Name = "fSale";
             this.Text = "Hóa đơn bán hàng";
-
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fSale_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fSale_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.HDBan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrMedicineList)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -470,40 +521,44 @@ namespace QLyHieuThuoc
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txbThue;
+        private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txbSoHD;
+        private System.Windows.Forms.TextBox txtInvoiceId;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateNgayHD;
+        private System.Windows.Forms.DateTimePicker dptInvoiceDate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DataGridView HDBan;
-        private System.Windows.Forms.TextBox txbDonGia;
+        private System.Windows.Forms.DataGridView dgrMedicineList;
+        private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txbSoLuong;
+        private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txbDonVi;
+        private System.Windows.Forms.TextBox txtUnit;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txbTenThuoc;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox cbMaNV;
+        private System.Windows.Forms.ComboBox cbMedicineId;
+        private System.Windows.Forms.ComboBox cbStaffId;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox cbMaKH;
+        private System.Windows.Forms.ComboBox cbCustomerId;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.TextBox txbTenKH;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txbTenNV;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txbTongTien;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddMedicine;
         private System.Windows.Forms.Button txbIn;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtAmount;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.DateTimePicker dtpDueDate;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtTax;
+        private System.Windows.Forms.Label label15;
     }
 }
