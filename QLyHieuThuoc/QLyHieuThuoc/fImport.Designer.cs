@@ -266,6 +266,9 @@ namespace QLyHieuThuoc
 =======
             this.label12.Text = "Đơn giá";
 
+<<<<<<< HEAD
+>>>>>>> parent of 636b571... Hưng commit
+=======
 >>>>>>> parent of 636b571... Hưng commit
             // 
             // dtpPODate
@@ -312,6 +315,9 @@ namespace QLyHieuThuoc
             this.txbMaThuoc.Size = new System.Drawing.Size(261, 22);
             this.txbMaThuoc.TabIndex = 1;
            
+<<<<<<< HEAD
+>>>>>>> parent of 636b571... Hưng commit
+=======
 >>>>>>> parent of 636b571... Hưng commit
             // 
             // txtMakeName
@@ -561,7 +567,10 @@ namespace QLyHieuThuoc
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phiếu nhập hàng";
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Load += new System.EventHandler(this.fImport_Load);
+=======
+>>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
             this.panel1.ResumeLayout(false);
