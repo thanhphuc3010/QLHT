@@ -55,7 +55,7 @@ namespace QLyHieuThuoc
             txbSoLuong.ReadOnly = true;
             txbSoDangKy.ReadOnly = true;
             txbThanhPhan.ReadOnly = true;
-            txbNgaySanXuat.ReadOnly = true;
+            dtNgaySanXuat.Enabled = false;
             txbHanSuDung.ReadOnly = true;
             txbNoiSanXuat.ReadOnly = true;
             txbDonGia.ReadOnly = true;
@@ -72,7 +72,7 @@ namespace QLyHieuThuoc
             txbSoLuong.ReadOnly = false;
             txbSoDangKy.ReadOnly = false;
             txbThanhPhan.ReadOnly = false;
-            txbNgaySanXuat.ReadOnly = false;
+            dtNgaySanXuat.Enabled = true;
             txbHanSuDung.ReadOnly = false;
             txbNoiSanXuat.ReadOnly = false;
             txbDonGia.ReadOnly = false;
@@ -103,7 +103,7 @@ namespace QLyHieuThuoc
             txbSoLuong.Text = "";
             txbSoDangKy.Text = "";
             txbThanhPhan.Text = "";
-            txbNgaySanXuat.Text = "";
+            dtNgaySanXuat.Text = "";
             txbHanSuDung.Text = "";
             txbNoiSanXuat.Text = "";
             txbHanSuDung.Text = "";
@@ -130,7 +130,7 @@ namespace QLyHieuThuoc
             txbSoLuong.Text = dsThuoc.Rows[i].Cells["SoLuong"].Value.ToString();
             txbSoDangKy.Text = dsThuoc.Rows[i].Cells["SoDK"].Value.ToString();
             txbThanhPhan.Text = dsThuoc.Rows[i].Cells["ThanhPhan"].Value.ToString();
-            txbNgaySanXuat.Text = dsThuoc.Rows[i].Cells["NgaySX"].Value.ToString();
+            dtNgaySanXuat.Text = dsThuoc.Rows[i].Cells["NgaySX"].Value.ToString();
             txbHanSuDung.Text = dsThuoc.Rows[i].Cells["HSD"].Value.ToString();
             txbNoiSanXuat.Text = dsThuoc.Rows[i].Cells["NoiSX"].Value.ToString();
             txbDonGia.Text = dsThuoc.Rows[i].Cells["DonGia"].Value.ToString();
@@ -166,7 +166,7 @@ namespace QLyHieuThuoc
         }
         private Boolean checkRequired()
         {
-            if (txbTenThuoc.Text == "" || txbDonVi.Text == "" || txbNgaySanXuat.Text =="" || txbHanSuDung.Text =="" )
+            if (txbTenThuoc.Text == "" || txbDonVi.Text == "" || dtNgaySanXuat.Text =="" || txbHanSuDung.Text =="" )
             {
                 return false;
             }
@@ -195,7 +195,7 @@ namespace QLyHieuThuoc
             txbSoLuong.Text = dsThuoc.Rows[i].Cells["SoLuong"].Value.ToString();
             txbSoDangKy.Text = dsThuoc.Rows[i].Cells["SoDK"].Value.ToString();
             txbThanhPhan.Text = dsThuoc.Rows[i].Cells["ThanhPhan"].Value.ToString();
-            txbNgaySanXuat.Text = dsThuoc.Rows[i].Cells["NgaySX"].Value.ToString();
+            dtNgaySanXuat.Text = dsThuoc.Rows[i].Cells["NgaySX"].Value.ToString();
             txbHanSuDung.Text = dsThuoc.Rows[i].Cells["HSD"].Value.ToString();
             txbNoiSanXuat.Text = dsThuoc.Rows[i].Cells["NoiSX"].Value.ToString();
             txbDonGia.Text = dsThuoc.Rows[i].Cells["DonGia"].Value.ToString();
@@ -250,7 +250,7 @@ namespace QLyHieuThuoc
 
                 if (checkRequired())
                 {
-                    int rows = db.excuteNonQuery(query, new object[] { txbMaThuoc.Text, txbTenThuoc.Text, txbHamLuong.Text, txbDonVi.Text, txbSoLuong.Text, txbSoDangKy.Text, txbThanhPhan.Text, txbNgaySanXuat.Text, txbHanSuDung.Text, txbNoiSanXuat.Text, txbDonGia.Text, txbDongGoi.Text, txbNhaSanXuat });
+                    int rows = db.excuteNonQuery(query, new object[] { txbMaThuoc.Text, txbTenThuoc.Text, txbHamLuong.Text, txbDonVi.Text, txbSoLuong.Text, txbSoDangKy.Text, txbThanhPhan.Text, dtNgaySanXuat.Text, txbHanSuDung.Text, txbNoiSanXuat.Text, txbDonGia.Text, txbDongGoi.Text, txbNhaSanXuat });
                     if (rows == 1)
                     {
                         MessageBox.Show("Thêm thuốc mới thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -291,7 +291,7 @@ namespace QLyHieuThuoc
 
                 Database db = new Database();
 
-                int rows = db.excuteNonQuery(query, new object[] { txbMaThuoc.Text, txbTenThuoc.Text, txbHamLuong.Text, txbDonVi.Text, txbSoLuong.Text, txbSoDangKy.Text, txbThanhPhan.Text, txbNgaySanXuat.Text, txbHanSuDung.Text, txbNoiSanXuat.Text, txbDonGia.Text, txbDongGoi.Text, txbNhaSanXuat });
+                int rows = db.excuteNonQuery(query, new object[] { txbMaThuoc.Text, txbTenThuoc.Text, txbHamLuong.Text, txbDonVi.Text, txbSoLuong.Text, txbSoDangKy.Text, txbThanhPhan.Text, dtNgaySanXuat.Text, txbHanSuDung.Text, txbNoiSanXuat.Text, txbDonGia.Text, txbDongGoi.Text, txbNhaSanXuat });
 
                 disableAllField();
 
@@ -309,17 +309,64 @@ namespace QLyHieuThuoc
             }
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataTable datareport;
+            if (comTruong.Text == "Còn hạn sử dụng")
+               { 
+                string query = "Select TenThuoc, DonviTinh, DonGia, TenNhaSX, HSD FROM tbl_Thuoc Left join tbl_DMNhaSx on tbl_Thuoc.MaNhaSX = tbl_DMNhaSx.MaNhaSX where HSD >= getdate()";
+                Database db = new Database();
+
+                datareport = db.excuteQuery(query);
+
+                //SqlDataAdapter da= new SqlDataAdapter();
+                //rptNhomThuoc1 rpt = new rptNhomThuoc1();
+                
+            } else if(comTruong.Text == "Hết hạn sử dụng")
+            {
+                string query = "Select TenThuoc, DonviTinh, DonGia, TenNhaSX, HSD FROM tbl_Thuoc Left join tbl_DMNhaSx on tbl_Thuoc.MaNhaSX = tbl_DMNhaSx.MaNhaSX where HSD < getdate()";
+                Database db = new Database();
+
+                datareport = db.excuteQuery(query);
+            }
+            else
+            {
+                MessageBox.Show("Chưa có điều kiện để lọc báo cáo!");
+                return;
+            }   
+            rptNhomThuoc1 rpt = new rptNhomThuoc1();
+
+            rpt.SetDataSource(datareport);
+
+            rpt.DataDefinition.FormulaFields["TinhTrang"].Text = "'" + comTruong.Text + "'";
+
+            frmTinhTrangPrv f = new frmTinhTrangPrv(rpt);
+
+            f.Show();
+
+        } 
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
+        private void txbDonGia_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void panel6_Paint(object sender, PaintEventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtNgaySanXuat_TextChanged(object sender, EventArgs e)
         {
 
         }
