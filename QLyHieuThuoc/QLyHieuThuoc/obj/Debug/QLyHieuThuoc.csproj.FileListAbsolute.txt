@@ -203,3 +203,6 @@ C:\Users\nguyetltm\Documents\PTUDQL\QLHT\QLyHieuThuoc\QLyHieuThuoc\bin\Debug\Cry
 C:\Users\nguyetltm\Documents\PTUDQL\QLHT\QLyHieuThuoc\QLyHieuThuoc\bin\Debug\ShockwaveFlashObjects.dll
 C:\Users\nguyetltm\Documents\PTUDQL\QLHT\QLyHieuThuoc\QLyHieuThuoc\obj\Debug\QLyHieuThuoc.frmTinhTrangPrv.resources
 >>>>>>> nguyet-qlht
+D:\QLHT\QLHT\QLyHieuThuoc\QLyHieuThuoc\obj\Debug\QLyHieuThuoc.fListImport.resources
+D:\QLHT\QLHT\QLyHieuThuoc\QLyHieuThuoc\obj\Debug\QLyHieuThuoc.fListSale.resources
+D:\QLHT\QLHT\QLyHieuThuoc\QLyHieuThuoc\obj\Debug\QLyHieuThuoc.frmTinhTrangPrv.resources
