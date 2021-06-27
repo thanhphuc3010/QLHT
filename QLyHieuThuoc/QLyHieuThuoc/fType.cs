@@ -103,6 +103,8 @@ namespace QLyHieuThuoc
             Database db = new Database();
 
             int rows = db.excuteNonQuery(query, new object[] { txbMa.Text });
+            
+            
 
             HienThi();
         }
@@ -143,6 +145,8 @@ namespace QLyHieuThuoc
                     btnLuu.Enabled = false;
 
                     enableDgrEvent();
+                    HienThi();
+
                 }
                 else
                 {
@@ -236,6 +240,11 @@ namespace QLyHieuThuoc
             else result = "LT" + i.ToString().Trim();
 
             return result;
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -102,3 +102,5 @@ D:\PTUDQL2021\QLHT\QLyHieuThuoc\QLyHieuThuoc\bin\Debug\System.Threading.Tasks.Ex
 D:\PTUDQL2021\QLHT\QLyHieuThuoc\QLyHieuThuoc\bin\Debug\Castle.Core.xml
 D:\PTUDQL2021\QLHT\QLyHieuThuoc\QLyHieuThuoc\bin\Debug\NSubstitute.xml
 D:\PTUDQL2021\QLHT\QLyHieuThuoc\QLyHieuThuoc\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\PTUDQL2021\QLHT\QLyHieuThuoc\QLyHieuThuoc\obj\Debug\QLyHieuThuoc.fListSale.resources
+D:\PTUDQL2021\QLHT\QLyHieuThuoc\QLyHieuThuoc\obj\Debug\QLyHieuThuoc.fListImport.resources

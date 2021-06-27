@@ -87,7 +87,7 @@ namespace QLyHieuThuoc
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(6, 8);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1341, 645);
+            this.panel1.Size = new System.Drawing.Size(2047, 645);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -99,7 +99,7 @@ namespace QLyHieuThuoc
             this.panel3.Controls.Add(this.label12);
             this.panel3.Location = new System.Drawing.Point(11, 340);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1314, 302);
+            this.panel3.Size = new System.Drawing.Size(2020, 302);
             this.panel3.TabIndex = 1;
             // 
             // dsThuoc
@@ -107,12 +107,13 @@ namespace QLyHieuThuoc
             this.dsThuoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dsThuoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dsThuoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dsThuoc.Location = new System.Drawing.Point(0, 43);
             this.dsThuoc.Name = "dsThuoc";
             this.dsThuoc.RowHeadersWidth = 51;
             this.dsThuoc.RowTemplate.Height = 24;
-            this.dsThuoc.Size = new System.Drawing.Size(1164, 256);
+            this.dsThuoc.Size = new System.Drawing.Size(1870, 256);
             this.dsThuoc.TabIndex = 18;
             this.dsThuoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dsThuoc_CellContentClick);
             this.dsThuoc.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dsThuoc_MouseUp);
@@ -140,12 +141,13 @@ namespace QLyHieuThuoc
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(6, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1172, 330);
+            this.panel2.Size = new System.Drawing.Size(1862, 330);
             this.panel2.TabIndex = 0;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(1053, 270);
+            this.btnLuu.Location = new System.Drawing.Point(1734, 270);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(103, 57);
             this.btnLuu.TabIndex = 17;
@@ -165,7 +167,7 @@ namespace QLyHieuThuoc
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(926, 270);
+            this.btnXoa.Location = new System.Drawing.Point(1607, 270);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(103, 57);
             this.btnXoa.TabIndex = 14;
@@ -175,7 +177,7 @@ namespace QLyHieuThuoc
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(806, 270);
+            this.btnSua.Location = new System.Drawing.Point(1487, 270);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(103, 57);
             this.btnSua.TabIndex = 13;
@@ -185,7 +187,7 @@ namespace QLyHieuThuoc
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(686, 270);
+            this.btnThem.Location = new System.Drawing.Point(1367, 270);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(103, 57);
             this.btnThem.TabIndex = 12;
@@ -203,16 +205,17 @@ namespace QLyHieuThuoc
             this.panel6.Controls.Add(this.label15);
             this.panel6.Controls.Add(this.txbDonGia);
             this.panel6.Controls.Add(this.label11);
-            this.panel6.Location = new System.Drawing.Point(788, 70);
+            this.panel6.Location = new System.Drawing.Point(1394, 70);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(368, 174);
+            this.panel6.Size = new System.Drawing.Size(443, 174);
             this.panel6.TabIndex = 11;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // txbNhaSanXuat
             // 
             this.txbNhaSanXuat.Location = new System.Drawing.Point(145, 96);
             this.txbNhaSanXuat.Name = "txbNhaSanXuat";
-            this.txbNhaSanXuat.Size = new System.Drawing.Size(189, 22);
+            this.txbNhaSanXuat.Size = new System.Drawing.Size(295, 22);
             this.txbNhaSanXuat.TabIndex = 7;
             // 
             // label13
@@ -229,7 +232,7 @@ namespace QLyHieuThuoc
             // 
             this.txbDongGoi.Location = new System.Drawing.Point(145, 68);
             this.txbDongGoi.Name = "txbDongGoi";
-            this.txbDongGoi.Size = new System.Drawing.Size(189, 22);
+            this.txbDongGoi.Size = new System.Drawing.Size(295, 22);
             this.txbDongGoi.TabIndex = 5;
             // 
             // label14
@@ -246,7 +249,7 @@ namespace QLyHieuThuoc
             // 
             this.txbNoiSanXuat.Location = new System.Drawing.Point(145, 40);
             this.txbNoiSanXuat.Name = "txbNoiSanXuat";
-            this.txbNoiSanXuat.Size = new System.Drawing.Size(189, 22);
+            this.txbNoiSanXuat.Size = new System.Drawing.Size(295, 22);
             this.txbNoiSanXuat.TabIndex = 3;
             // 
             // label15
@@ -263,7 +266,7 @@ namespace QLyHieuThuoc
             // 
             this.txbDonGia.Location = new System.Drawing.Point(145, 12);
             this.txbDonGia.Name = "txbDonGia";
-            this.txbDonGia.Size = new System.Drawing.Size(189, 22);
+            this.txbDonGia.Size = new System.Drawing.Size(295, 22);
             this.txbDonGia.TabIndex = 1;
             // 
             // label11
@@ -286,17 +289,17 @@ namespace QLyHieuThuoc
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.txbHanSuDung);
             this.panel5.Controls.Add(this.label16);
-            this.panel5.Location = new System.Drawing.Point(404, 70);
+            this.panel5.Location = new System.Drawing.Point(677, 70);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(351, 174);
+            this.panel5.Size = new System.Drawing.Size(577, 174);
             this.panel5.TabIndex = 10;
             // 
             // txbNgaySanXuat
             // 
-            this.txbNgaySanXuat.Location = new System.Drawing.Point(134, 68);
+            this.txbNgaySanXuat.Location = new System.Drawing.Point(149, 68);
             this.txbNgaySanXuat.Multiline = true;
             this.txbNgaySanXuat.Name = "txbNgaySanXuat";
-            this.txbNgaySanXuat.Size = new System.Drawing.Size(189, 22);
+            this.txbNgaySanXuat.Size = new System.Drawing.Size(297, 22);
             this.txbNgaySanXuat.TabIndex = 7;
             // 
             // label8
@@ -311,10 +314,10 @@ namespace QLyHieuThuoc
             // 
             // txbThanhPhan
             // 
-            this.txbThanhPhan.Location = new System.Drawing.Point(134, 40);
+            this.txbThanhPhan.Location = new System.Drawing.Point(149, 40);
             this.txbThanhPhan.Multiline = true;
             this.txbThanhPhan.Name = "txbThanhPhan";
-            this.txbThanhPhan.Size = new System.Drawing.Size(189, 22);
+            this.txbThanhPhan.Size = new System.Drawing.Size(297, 22);
             this.txbThanhPhan.TabIndex = 5;
             // 
             // label9
@@ -329,10 +332,10 @@ namespace QLyHieuThuoc
             // 
             // txbSoDangKy
             // 
-            this.txbSoDangKy.Location = new System.Drawing.Point(134, 12);
+            this.txbSoDangKy.Location = new System.Drawing.Point(149, 12);
             this.txbSoDangKy.Multiline = true;
             this.txbSoDangKy.Name = "txbSoDangKy";
-            this.txbSoDangKy.Size = new System.Drawing.Size(189, 22);
+            this.txbSoDangKy.Size = new System.Drawing.Size(297, 22);
             this.txbSoDangKy.TabIndex = 3;
             // 
             // label10
@@ -347,9 +350,9 @@ namespace QLyHieuThuoc
             // 
             // txbHanSuDung
             // 
-            this.txbHanSuDung.Location = new System.Drawing.Point(134, 94);
+            this.txbHanSuDung.Location = new System.Drawing.Point(149, 94);
             this.txbHanSuDung.Name = "txbHanSuDung";
-            this.txbHanSuDung.Size = new System.Drawing.Size(189, 22);
+            this.txbHanSuDung.Size = new System.Drawing.Size(297, 22);
             this.txbHanSuDung.TabIndex = 1;
             // 
             // label16
@@ -376,15 +379,16 @@ namespace QLyHieuThuoc
             this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(21, 70);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(351, 174);
+            this.panel4.Size = new System.Drawing.Size(533, 174);
             this.panel4.TabIndex = 1;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // txbSoLuong
             // 
-            this.txbSoLuong.Location = new System.Drawing.Point(115, 124);
+            this.txbSoLuong.Location = new System.Drawing.Point(140, 124);
             this.txbSoLuong.Multiline = true;
             this.txbSoLuong.Name = "txbSoLuong";
-            this.txbSoLuong.Size = new System.Drawing.Size(206, 25);
+            this.txbSoLuong.Size = new System.Drawing.Size(323, 25);
             this.txbSoLuong.TabIndex = 9;
             // 
             // label6
@@ -399,10 +403,10 @@ namespace QLyHieuThuoc
             // 
             // txbDonVi
             // 
-            this.txbDonVi.Location = new System.Drawing.Point(115, 96);
+            this.txbDonVi.Location = new System.Drawing.Point(140, 96);
             this.txbDonVi.Multiline = true;
             this.txbDonVi.Name = "txbDonVi";
-            this.txbDonVi.Size = new System.Drawing.Size(206, 25);
+            this.txbDonVi.Size = new System.Drawing.Size(323, 25);
             this.txbDonVi.TabIndex = 7;
             // 
             // label5
@@ -417,10 +421,10 @@ namespace QLyHieuThuoc
             // 
             // txbHamLuong
             // 
-            this.txbHamLuong.Location = new System.Drawing.Point(115, 68);
+            this.txbHamLuong.Location = new System.Drawing.Point(140, 68);
             this.txbHamLuong.Multiline = true;
             this.txbHamLuong.Name = "txbHamLuong";
-            this.txbHamLuong.Size = new System.Drawing.Size(206, 25);
+            this.txbHamLuong.Size = new System.Drawing.Size(323, 25);
             this.txbHamLuong.TabIndex = 5;
             // 
             // label4
@@ -435,10 +439,10 @@ namespace QLyHieuThuoc
             // 
             // txbTenThuoc
             // 
-            this.txbTenThuoc.Location = new System.Drawing.Point(115, 40);
+            this.txbTenThuoc.Location = new System.Drawing.Point(140, 40);
             this.txbTenThuoc.Multiline = true;
             this.txbTenThuoc.Name = "txbTenThuoc";
-            this.txbTenThuoc.Size = new System.Drawing.Size(206, 25);
+            this.txbTenThuoc.Size = new System.Drawing.Size(323, 25);
             this.txbTenThuoc.TabIndex = 3;
             // 
             // label3
@@ -453,10 +457,10 @@ namespace QLyHieuThuoc
             // 
             // txbMaThuoc
             // 
-            this.txbMaThuoc.Location = new System.Drawing.Point(115, 12);
+            this.txbMaThuoc.Location = new System.Drawing.Point(140, 12);
             this.txbMaThuoc.Multiline = true;
             this.txbMaThuoc.Name = "txbMaThuoc";
-            this.txbMaThuoc.Size = new System.Drawing.Size(206, 25);
+            this.txbMaThuoc.Size = new System.Drawing.Size(323, 25);
             this.txbMaThuoc.TabIndex = 1;
             // 
             // label2
@@ -473,7 +477,7 @@ namespace QLyHieuThuoc
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(452, 9);
+            this.label1.Location = new System.Drawing.Point(823, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(227, 29);
             this.label1.TabIndex = 0;
@@ -483,7 +487,7 @@ namespace QLyHieuThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1193, 665);
+            this.ClientSize = new System.Drawing.Size(1899, 665);
             this.Controls.Add(this.panel1);
             this.Name = "fUpdate";
             this.Text = "Cập nhật thuốc";

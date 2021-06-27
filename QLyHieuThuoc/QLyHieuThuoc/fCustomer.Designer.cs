@@ -32,6 +32,7 @@ namespace QLyHieuThuoc
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtKeySearch = new System.Windows.Forms.TextBox();
             this.btnXoa = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@ namespace QLyHieuThuoc
             this.txbMaKH = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drgDMKH)).BeginInit();
             this.panel3.SuspendLayout();
@@ -61,6 +61,9 @@ namespace QLyHieuThuoc
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.txtKeySearch);
             this.panel1.Controls.Add(this.btnXoa);
             this.panel1.Controls.Add(this.label4);
@@ -71,7 +74,7 @@ namespace QLyHieuThuoc
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(10, 8);
+            this.panel1.Location = new System.Drawing.Point(12, 8);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(953, 595);
             this.panel1.TabIndex = 0;
@@ -83,6 +86,7 @@ namespace QLyHieuThuoc
             this.txtKeySearch.Name = "txtKeySearch";
             this.txtKeySearch.Size = new System.Drawing.Size(331, 31);
             this.txtKeySearch.TabIndex = 1;
+            this.txtKeySearch.TextChanged += new System.EventHandler(this.txtKeySearch_TextChanged);
             this.txtKeySearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbMaCanTim_KeyUp);
             // 
             // btnXoa
@@ -95,6 +99,16 @@ namespace QLyHieuThuoc
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(22, 279);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(97, 25);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Tìm kiếm: ";
             // 
             // btnSua
             // 
@@ -131,6 +145,10 @@ namespace QLyHieuThuoc
             // 
             // drgDMKH
             // 
+            this.drgDMKH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.drgDMKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.drgDMKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.drgDMKH.Location = new System.Drawing.Point(23, 318);
             this.drgDMKH.Name = "drgDMKH";
@@ -302,16 +320,6 @@ namespace QLyHieuThuoc
             this.label1.TabIndex = 1;
             this.label1.Text = "DANH MỤC KHÁCH HÀNG";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 279);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 25);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Tìm kiếm: ";
-            // 
             // fCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -321,6 +329,7 @@ namespace QLyHieuThuoc
             this.Name = "fCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh mục khách hàng";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fCustomer_FormClosing);
             this.Load += new System.EventHandler(this.fCustomer_Load);
             this.panel1.ResumeLayout(false);

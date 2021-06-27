@@ -46,6 +46,7 @@ namespace QLyHieuThuoc
             Database db = new Database();
             drgDSNV.DataSource = db.excuteQuery(query);
 
+
         }
         private void disableAllField()
         {
@@ -54,6 +55,7 @@ namespace QLyHieuThuoc
             txbTenNV.ReadOnly = true;
             txbSDTNV.ReadOnly = true;          
             txbDiaChiNV.ReadOnly = true;
+            txbPassword.ReadOnly = true;
         }
         private void enableAllField()
         {
@@ -62,6 +64,8 @@ namespace QLyHieuThuoc
             txbTenNV.ReadOnly = false;
             txbSDTNV.ReadOnly = false;
             txbDiaChiNV.ReadOnly = false;
+            txbPassword.ReadOnly = false;
+            
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -82,6 +86,8 @@ namespace QLyHieuThuoc
             txbMaNV.Text = "";
             txbDiaChiNV.Text = "";
             txbSDTNV.Text = "";
+           
+            txbPassword.Text = "";
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -112,7 +118,7 @@ namespace QLyHieuThuoc
             txbMaNV.Text = drgDSNV.Rows[i].Cells["MaNV"].Value.ToString();
             txbDiaChiNV.Text = drgDSNV.Rows[i].Cells["DiaChiNV"].Value.ToString();
             txbSDTNV.Text = drgDSNV.Rows[i].Cells["SDTNV"].Value.ToString();
-
+           
         }
 
         private void drgDSNV_MouseUp(object sender, MouseEventArgs e)
@@ -124,15 +130,19 @@ namespace QLyHieuThuoc
         {
             if (isAddFlag == true)
             {
+                int sex;
 
-
-                string query = "INSERT INTO tbl_NhanVien(MaNV, TenNV, DiaChiNV, SDTNV) VALUES( @MaNV , @TenNV , @DiaChiNV , @SDTNV ) ";
-
+                string query = "INSERT INTO tbl_NhanVien(MaNV, TenNV, GioiTinh, DiaChiNV, SDTNV, Password) VALUES( @MaNV , @TenNV , @GioiTinh , @DiaChiNV , @SDTNV , @Password ) ";
+                if (isIndividual())
+                {
+                    sex = 1;
+                }
+                else sex = 0;
                 Database db = new Database();
 
                 if (checkRequired())
                 {
-                    int rows = db.excuteNonQuery(query, new object[] { txbMaNV.Text, txbTenNV.Text, txbDiaChiNV.Text, txbSDTNV.Text });
+                    int rows = db.excuteNonQuery(query, new object[] { txbMaNV.Text, txbTenNV.Text, txbDiaChiNV.Text, txbSDTNV.Text, txbPassword, });
                     if (rows == 1)
                     {
                         MessageBox.Show("Thêm mới nhân viên thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -145,7 +155,7 @@ namespace QLyHieuThuoc
 
                     disableAllField();
 
-                    isAddFlag = false;
+                    isAddFlag = false ;
 
                     btnThem.Enabled = true;
 
@@ -156,6 +166,8 @@ namespace QLyHieuThuoc
                     btnLuu.Enabled = false;
 
                     enableDgrEvent();
+
+                    HienThi();
                 }
                 else
                 {
@@ -166,14 +178,16 @@ namespace QLyHieuThuoc
             {
 
 
-                string query = "UPDATE tbl_NhanVien SET TenNV = @TenNV  , DiaChiNV = @DiaChiNV , SDTNV = @SDTNV  WHERE MaNV = @MaNV ";
-
-
-
-
+                string query = "UPDATE tbl_NhanVien SET TenNV = @TenNV  , DiaChiNV = @DiaChiNV , SDTNV = @SDTNV , GioiTinh = @GioiTinh , Password = @Password WHERE MaNV = @MaNV ";
+                int sex;
                 Database db = new Database();
+                if (isIndividual())
+                {
+                    sex = 1;
+                }
+                else sex = 0;
 
-                int rows = db.excuteNonQuery(query, new object[] { txbMaNV.Text, txbTenNV.Text, txbDiaChiNV, txbSDTNV.Text });
+                int rows = db.excuteNonQuery(query, new object[] { txbMaNV.Text, txbTenNV.Text, sex, txbDiaChiNV, txbSDTNV.Text, txbPassword });
 
                 disableAllField();
 
@@ -198,14 +212,39 @@ namespace QLyHieuThuoc
             }
             else return true;
         }
+
+        private void handleCheckedKL()
+        {
+            if (ckNam.Checked == true)
+            {
+                ckNu.Checked = false;
+            }
+            else ckNu.Checked = true;
+
+        }
         private void disableDgrEvent()
         {
             drgDSNV.CellContentClick -= drgDSNV_CellContentClick;
 
             drgDSNV.MouseUp -= drgDSNV_MouseUp;
         }
+        private Boolean isIndividual()
+        {
+            return ckNam.Checked;
+        }
 
-        private void enableDgrEvent()
+        Boolean typeChecked = (drgDsNV.Rows[i].Cells["LoaiDT"].Value != null) ? Convert.ToBoolean(drgDMKH.Rows[i].Cells["LoaiDT"].Value) : true;
+            if (typeChecked == true)
+            {
+                checkKhachLe.Checked = true;
+                checkDVTC.Checked = false;
+            } else
+            {
+                checkKhachLe.Checked = false;
+                checkDVTC.Checked = true;
+            }
+
+private void enableDgrEvent()
         {
             drgDSNV.CellContentClick += drgDSNV_CellContentClick;
 
@@ -231,13 +270,9 @@ namespace QLyHieuThuoc
             string result;
             if (i < 10)
             {
-                result = "NV" + "000" + i.ToString().Trim();
-            }
-            else if (i < 100)
-            {
                 result = "NV" + "00" + i.ToString().Trim();
             }
-            else if (i < 1000)
+            else if (i < 100)
             {
                 result = "NV" + "0" + i.ToString().Trim();
             }
@@ -249,7 +284,24 @@ namespace QLyHieuThuoc
 
         private void drgDSNV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            loadDataTotext();
+
+        }
+
+        private void drgDSNV_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void drgDSNV_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 5 && e.Value !=null)
+            {
+                e.Value = new string('*', e.Value.ToString().Length);
+            }    
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
