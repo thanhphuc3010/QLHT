@@ -69,12 +69,15 @@ namespace QLyHieuThuoc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //f.ShowDialog();
 
             f.Show();
 
         }
 
+=======
+>>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
 =======

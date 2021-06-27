@@ -51,6 +51,10 @@ namespace QLyHieuThuoc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            this.danhSáchNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.danhSáchNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 >>>>>>> parent of 636b571... Hưng commit
@@ -82,7 +86,11 @@ namespace QLyHieuThuoc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+=======
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
 >>>>>>> parent of 636b571... Hưng commit
@@ -212,7 +220,11 @@ namespace QLyHieuThuoc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.bánHàngToolStripMenuItem.Size = new System.Drawing.Size(85, 26);
+=======
+            this.bánHàngToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.bánHàngToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
 >>>>>>> parent of 636b571... Hưng commit
@@ -234,7 +246,11 @@ namespace QLyHieuThuoc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.tạoHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+=======
+            this.tạoHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.tạoHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
 >>>>>>> parent of 636b571... Hưng commit
@@ -256,9 +272,12 @@ namespace QLyHieuThuoc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.lịchSửBánHàngToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
             this.lịchSửBánHàngToolStripMenuItem.Text = "Lịch sử bán hàng";
 =======
+=======
+>>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
 =======
@@ -277,6 +296,9 @@ namespace QLyHieuThuoc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 636b571... Hưng commit
+=======
 >>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
@@ -300,7 +322,10 @@ namespace QLyHieuThuoc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+=======
+>>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
 =======
