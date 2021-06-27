@@ -270,6 +270,7 @@ namespace QLyHieuThuoc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
@@ -286,6 +287,8 @@ namespace QLyHieuThuoc
             this.dtpPODate.Size = new System.Drawing.Size(155, 30);
             this.dtpPODate.TabIndex = 5;
 =======
+=======
+>>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
             // 
@@ -383,6 +386,7 @@ namespace QLyHieuThuoc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
@@ -397,6 +401,8 @@ namespace QLyHieuThuoc
             this.txtMakeName.Size = new System.Drawing.Size(247, 30);
             this.txtMakeName.TabIndex = 3;
 =======
+=======
+>>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
             // 
@@ -651,7 +657,10 @@ namespace QLyHieuThuoc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Load += new System.EventHandler(this.fImport_Load);
+=======
+>>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
 =======

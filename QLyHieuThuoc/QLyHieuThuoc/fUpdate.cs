@@ -313,6 +313,7 @@ namespace QLyHieuThuoc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -375,6 +376,8 @@ namespace QLyHieuThuoc
         {
 
         }
+=======
+>>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
 =======
