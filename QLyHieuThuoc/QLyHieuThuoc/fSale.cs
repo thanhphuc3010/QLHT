@@ -45,6 +45,8 @@ namespace QLyHieuThuoc
             txtTotalAmout.Text = totalAmount.ToString();
 
             txtTotalAmout.ReadOnly = true;
+
+            btnEdit.Enabled = false;
         }
 
         public static string CreateKey(string tiento)
@@ -73,13 +75,13 @@ namespace QLyHieuThuoc
 
         private void insertInvoiceToDB()
         {
-            string query = "INSERT INTO tbl_HDBan (SoHD, NgayHD, HanTT) VALUES ( @SoHD , @NgayHD , @HanTT )";
+            string query = "INSERT INTO tbl_HDBan (SoHD, NgayHD, Tongtien) VALUES ( @SoHD , @NgayHD , @Tongtien )";
 
             Database db = new Database();
 
             //int tax = Convert.ToInt16(txtTax.Text);
 
-            int row = db.excuteNonQuery(query, new object[] { invoiceID.Trim(), dptInvoiceDate.Value, dtpDueDate.Value });
+            int row = db.excuteNonQuery(query, new object[] { invoiceID.Trim(), dptInvoiceDate.Value, totalAmount});
         }
 
         private void txbThue_TextChanged(object sender, EventArgs e)
@@ -154,6 +156,9 @@ namespace QLyHieuThuoc
 
                 txtPrice.Text = data.Rows[0]["Dongia"].ToString();
 
+                txtQuantity.Text = "0";
+
+                txtPrice.ReadOnly = true;
             }
         }
 
@@ -171,11 +176,14 @@ namespace QLyHieuThuoc
         private void btnAddMedicine_Click(object sender, EventArgs e)
         {
             string MedicineID = cbMedicineId.SelectedValue.ToString();
+
             int quantity = Convert.ToInt32(txtQuantity.Text);
+
             int price = Convert.ToInt32(txtPrice.Text);
 
             //Start check inventory
             string medicineID = cbMedicineId.SelectedValue.ToString();
+
             string query = "SELECT SoLuong FROM tbl_Thuoc WHERE MaThuoc = '" + medicineID + "'";
 
             Database db = new Database();
@@ -202,21 +210,34 @@ namespace QLyHieuThuoc
                 return;
             }
 
+            
+            // Thêm thuốc vào hoá đơn chi tiết
             query = "INSERT INTO tbl_CTHD (SoHD, MaThuoc, SoLuong, DonGia) VALUES ( @SoHD , @MaThuoc , @SoLuong , @DonGia )";
-
-            //int tax = Convert.ToInt16(txtTax.Text);
 
             int row = db.excuteNonQuery(query, new object[] { invoiceID, MedicineID, quantity, price });
 
-            totalAmount = totalAmount + Convert.ToDouble(txtAmount.Text);
+            // Cập nhật lại số lượng trong bảng thuốc;
+            double newInventory = inventory - quantity;
 
-            txtTotalAmout.Text = totalAmount.ToString();
+            query = "UPDATE tbl_Thuoc SET SoLuong = " + newInventory + " WHERE MaThuoc = '" + medicineID + "'";
 
-            double tax = Convert.ToDouble(txtTax.Text) / 100 * totalAmount;
+            db.excuteNonQuery(query);
+
+            // Tính tổng tiền của hoá đơn
+
+            totalAmount = getInvoiceTotalAmountById(invoiceID);
+
+            double newTotalAmount = totalAmount + Convert.ToDouble(txtAmount.Text);
+
+            setInvoiceTotalAmountById(invoiceID, newTotalAmount);
+
+            txtTotalAmout.Text = newTotalAmount.ToString();
+
+            double tax = Convert.ToDouble(txtTax.Text) / 100 * newTotalAmount;
 
             txtTaxAmount.Text = tax.ToString();
 
-            txtSeltment.Text = (totalAmount + tax).ToString();
+            txtSeltment.Text = (newTotalAmount + tax).ToString();
 
             resetMedicines();
 
@@ -274,31 +295,100 @@ namespace QLyHieuThuoc
 
 
 
+        private double getQuantityInventoryByMedicineID(string id)
+        {
+            Database db = new Database();
 
+            string query = "SELECT SoLuong FROM tbl_Thuoc WHERE MaThuoc = '" + id + "'";
 
+            double quantity = Convert.ToDouble(db.excuteQuery(query).Rows[0]["SoLuong"]);
 
+            return quantity;
+        }
+
+        private void setQuantityInventoryByMedicineID(string id, double quantity)
+        {
+            Database db = new Database();
+
+            string query = "UPDATE tbl_Thuoc SET SoLuong = @Soluong WHERE MaThuoc = '" + id + "'";
+
+            db.excuteNonQuery(query, new object[] { quantity });
+        }
+
+        private void setInvoiceTotalAmountById(string id, double total)
+        {
+            Database db = new Database();
+
+            string query = "UPDATE tbl_HDBan SET Tongtien = @Tongtien WHERE SoHD = '" + id + "'";
+
+            db.excuteNonQuery(query, new object[] { total });
+        }
+
+        private double getInvoiceTotalAmountById(string id)
+        {
+            Database db = new Database();
+
+            string query = "SELECT Tongtien FROM tbl_HDBan WHERE SoHD = '" + id + "'";
+
+            double total = Convert.ToDouble(db.excuteQuery(query).Rows[0]["Tongtien"]);
+
+            return total;
+        }
+
+        private void deleteInvoice()
+        {
+            double sl, newQuantity, slxoa;
+
+            Database db = new Database();
+
+            string query = "SELECT MaThuoc, SoLuong FROM tbl_CTHD WHERE SoHD = '" + txtInvoiceId.Text + "'";
+
+            DataTable tblThuoc = db.excuteQuery(query);
+
+            for (int thuoc = 0; thuoc <= tblThuoc.Rows.Count - 1; thuoc++)
+            {
+                string id = tblThuoc.Rows[thuoc][0].ToString();
+                // Cập nhật lại số lượng cho các mặt hàng
+                sl = getQuantityInventoryByMedicineID(id);
+
+                slxoa = Convert.ToDouble(tblThuoc.Rows[thuoc][1].ToString());
+
+                newQuantity = sl + slxoa;
+
+                setQuantityInventoryByMedicineID(id, newQuantity);
+            }
+
+            query = "DELETE FROM tbl_CTHD WHERE SoHD = '" + invoiceID + "'";
+
+            int count = db.excuteNonQuery(query);
+
+            query = "DELETE FROM tbl_HDBan WHERE SoHD = '" + invoiceID + "'";
+
+            count = db.excuteNonQuery(query);
+        }
 
         private void fSale_FormClosing(object sender, FormClosingEventArgs e)
         {
-            string message = "Bạn có muốn đóng cửa sổ, đóng cửa sổ khi không lưu sẽ không ghi nhận hoá đơn. Bạn đồng ý chứ ?";
-            DialogResult dialogResult = MessageBox.Show(message, "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (dialogResult == DialogResult.Yes)
+            if (cbCustomerId.SelectedIndex != -1 || dgrMedicineList.Rows.Count != 0)
             {
-                string query = "DELETE FROM tbl_CTHD WHERE SoHD = '" + invoiceID + "'";
+                string message = "Bạn có muốn đóng cửa sổ, đóng cửa sổ khi không lưu sẽ không ghi nhận hoá đơn. Bạn đồng ý chứ ?";
+                DialogResult dialogResult = MessageBox.Show(message, "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                Database db = new Database();
+                if (dialogResult == DialogResult.Yes)
+                {
+                    deleteInvoice();
 
-                int count = db.excuteNonQuery(query);
+                }
+                else
+                {
+                    e.Cancel = true;
 
-                query = "DELETE FROM tbl_HDBan WHERE SoHD = '" + invoiceID + "'";
-
-                count = db.excuteNonQuery(query);
-            } else
-            {
-                e.Cancel = true;
-                return;
+                    return;
+                }
             }
+
+            else deleteInvoice();
+           
         }
 
         private void dgrMedicineList_DoubleClick(object sender, EventArgs e)
@@ -321,6 +411,7 @@ namespace QLyHieuThuoc
             if ((MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
                 //Xóa hàng và cập nhật lại số lượng hàng 
+
                 MaHangxoa = dgrMedicineList.CurrentRow.Cells["MaThuoc"].Value.ToString();
 
                 SoLuongxoa = Convert.ToDouble(dgrMedicineList.CurrentRow.Cells["SoLuong"].Value.ToString());
@@ -336,23 +427,250 @@ namespace QLyHieuThuoc
 
                 DataTable data = db.excuteQuery(sql);
 
-                
-
                 sl = Convert.ToDouble(data.Rows[0]["SoLuong"]);
 
                 newQuantity = sl + SoLuongxoa;
 
-                sql = "UPDATE tblHang SET SoLuong =" + newQuantity + " WHERE MaHang= N'" + MaHangxoa + "'";
-                Functions.RunSQL(sql);
+                sql = "UPDATE tbl_Thuoc SET SoLuong =" + newQuantity + " WHERE MaThuoc= '" + MaHangxoa + "'";
+
+                db.excuteNonQuery(sql);
+
                 // Cập nhật lại tổng tiền cho hóa đơn bán
-                tong = Convert.ToDouble(Functions.GetFieldValues("SELECT TongTien FROM tblHDBan WHERE MaHDBan = N'" + txtMaHDBan.Text + "'"));
-                tongmoi = tong - ThanhTienxoa;
-                sql = "UPDATE tblHDBan SET TongTien =" + tongmoi + " WHERE MaHDBan = N'" + txtMaHDBan.Text + "'";
-                Functions.RunSQL(sql);
-                txtTongTien.Text = tongmoi.ToString();
-                lblBangChu.Text = "Bằng chữ: " + Functions.ChuyenSoSangChu(tongmoi.ToString());
-                LoadDataGridView();
+                                              
+                tongmoi = getInvoiceTotalAmountById(invoiceID) - ThanhTienxoa;
+
+                setInvoiceTotalAmountById(invoiceID, tongmoi); 
+
+                txtTotalAmout.Text = tongmoi.ToString();
+
+                txtTaxAmount.Text = (tongmoi * Convert.ToDouble(txtTax.Text) / 100).ToString();
+
+                txtSeltment.Text = (tongmoi + (tongmoi * Convert.ToDouble(txtTax.Text) / 100)).ToString();
+
+                loadDetailInvoice();
             }
+        }
+
+        private void dgrMedicineList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = dgrMedicineList.CurrentRow.Index;
+
+            string id = dgrMedicineList.Rows[i].Cells["MaThuoc"].Value.ToString();
+
+            cbMedicineId.SelectedValue = id;
+
+            cbMedicineId.Enabled = false;
+
+            string query = "SELECT TenThuoc, DonviTinh, Dongia FROM tbl_Thuoc WHERE MaThuoc = '" + id + "'";
+
+            Database db = new Database();
+
+            DataTable data = db.excuteQuery(query);
+
+            txtUnit.Text = data.Rows[0]["DonviTinh"].ToString();
+
+            txtUnit.ReadOnly = true;
+
+            txtPrice.Text = data.Rows[0]["Dongia"].ToString();
+
+            txtPrice.ReadOnly = true;
+
+            txtQuantity.Text = dgrMedicineList.Rows[i].Cells["SoLuong"].Value.ToString();
+
+            btnAddMedicine.Visible = false;
+
+            btnCancle.Visible = true;
+
+            btnEdit.Enabled = true;
+        }
+
+        private void cbMedicineId_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgrMedicineList_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                ContextMenu m = new ContextMenu();
+                m.MenuItems.Add(new MenuItem("Cut"));
+                m.MenuItems.Add(new MenuItem("Copy"));
+                m.MenuItems.Add(new MenuItem("Paste"));
+
+                int currentMouseOverRow = dgrMedicineList.HitTest(e.X, e.Y).RowIndex;
+
+                if (currentMouseOverRow >= 0)
+                {
+                    m.MenuItems.Add(new MenuItem(string.Format("Do something to row {0}", currentMouseOverRow.ToString())));
+                }
+
+                m.Show(dgrMedicineList, new Point(e.X, e.Y));
+            }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            string message = "Bạn có chắc chắn muốn xoá hoá đơn này không";
+
+            if (cbCustomerId.SelectedIndex != -1 || dgrMedicineList.Rows.Count != 0)
+            {
+                DialogResult dialogResult = MessageBox.Show(message, "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    try
+                    {
+                        deleteInvoice();
+
+                        MessageBox.Show("Huỷ hoá đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        this.FormClosing -= fSale_FormClosing;
+
+                        this.Close();
+
+                    } catch
+                    {
+                        MessageBox.Show("Huỷ hoá đơn không thành công, vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    return;
+                }
+            } 
+            else
+            {
+                deleteInvoice();
+
+                this.Close();
+            }
+        }
+
+        private void btnCancle_Click(object sender, EventArgs e)
+        {
+            resetMedicines();
+
+            txtUnit.ReadOnly = false;
+
+            txtPrice.ReadOnly = false;
+
+            btnAddMedicine.Visible = true;
+
+            btnCancle.Visible = false;
+
+            cbMedicineId.Enabled = true;
+
+            btnEdit.Enabled = false;
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            // Cập nhật lại số lượng vào bảng thuốc
+
+            double sl, newQuantity, slxoa, deleteAmount;
+
+            Database db = new Database();
+
+            string id = cbMedicineId.SelectedValue.ToString();
+
+            string query = "SELECT SoLuong, (SoLuong * Dongia) AS amount FROM tbl_CTHD WHERE SoHD = '" + txtInvoiceId.Text + "' AND MaThuoc ='" + id + "'";
+
+            DataTable tblThuoc = db.excuteQuery(query);
+
+            // Cập nhật lại số lượng thuốc vào bảng thuốc
+            sl = getQuantityInventoryByMedicineID(id);
+
+            slxoa = Convert.ToDouble(tblThuoc.Rows[0]["SoLuong"].ToString());
+
+            deleteAmount = Convert.ToDouble(tblThuoc.Rows[0]["amount"].ToString());
+
+            newQuantity = sl + slxoa;
+
+            setQuantityInventoryByMedicineID(id, newQuantity);
+
+            if (Convert.ToDouble(txtQuantity.Text) > getQuantityInventoryByMedicineID(id))
+            {
+                MessageBox.Show("Số lượng mặt hàng này chỉ còn " + getQuantityInventoryByMedicineID(id), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtQuantity.Text = "";
+                txtQuantity.Focus();
+                return;
+            }
+
+            query = "UPDATE tbl_CTHD SET Soluong = @SoLuong WHERE SoHD = '" + invoiceID + "' AND MaThuoc ='" + id + "'";
+
+            int count = db.excuteNonQuery(query, new object[] {txtQuantity.Text});
+
+            try
+            {
+                setQuantityInventoryByMedicineID(id, newQuantity - Convert.ToDouble(txtQuantity.Text));
+                MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+         
+            catch
+            {
+                MessageBox.Show("Sửa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            double addAmount = Convert.ToDouble(txtAmount.Text);
+
+            double newTotal = getInvoiceTotalAmountById(invoiceID) - deleteAmount + addAmount;
+
+            setInvoiceTotalAmountById(invoiceID, newTotal);
+
+            txtTotalAmout.Text = newTotal.ToString();
+
+            txtTaxAmount.Text = (newTotal * Convert.ToDouble(txtTax.Text) / 100).ToString();
+
+            txtSeltment.Text = (newTotal + (newTotal * Convert.ToDouble(txtTax.Text) / 100)).ToString();
+
+            loadDetailInvoice();
+
+            resetMedicines();
+
+            txtUnit.ReadOnly = false;
+
+            txtPrice.ReadOnly = false;
+
+            btnAddMedicine.Visible = true;
+
+            btnCancle.Visible = false;
+
+            btnEdit.Enabled = false;
+
+            cbMedicineId.Enabled = true;
+        }
+
+        private void dtpDueDate_ValueChanged(object sender, EventArgs e)
+        {
+            //Database db = new Database();
+
+            //string query = "UPDATE tbl_HDBan SET HanTT = @HanTT ";
+
+            //db.excuteNonQuery(query, new object[] { dtpDueDate.Value});
+        }
+
+        private void btnSaveInvoice_Click(object sender, EventArgs e)
+        {
+            Database db = new Database();
+
+            string status = "Hoàn thành";
+
+            string query = "UPDATE tbl_HDBan SET TrangThai = @TrangThai WHERE SoHD = '" + txtInvoiceId.Text + "'";
+
+            db.excuteNonQuery(query, new object[]{ status });
+
+            MessageBox.Show("Lưu hoá đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.FormClosing -= fSale_FormClosing;
+
+            this.Close();
+
+            fSale f = new fSale();
+
+            f.MdiParent = fTableManager.ActiveForm;
+
+            f.Show();
         }
     }
 }
