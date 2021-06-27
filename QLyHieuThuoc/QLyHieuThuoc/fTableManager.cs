@@ -67,12 +67,15 @@ namespace QLyHieuThuoc
             f.MdiParent = this;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             //f.ShowDialog();
 
             f.Show();
 
         }
 
+=======
+>>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
         private void danhSáchNhânViênToolStripMenuItem_Click(object sender, EventArgs e)

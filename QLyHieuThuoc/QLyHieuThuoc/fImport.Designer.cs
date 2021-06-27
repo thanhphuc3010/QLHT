@@ -267,6 +267,9 @@ namespace QLyHieuThuoc
             this.label12.Text = "Đơn giá";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 636b571... Hưng commit
+=======
 >>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
@@ -316,6 +319,9 @@ namespace QLyHieuThuoc
             this.txbMaThuoc.TabIndex = 1;
            
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 636b571... Hưng commit
+=======
 >>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
@@ -568,7 +574,10 @@ namespace QLyHieuThuoc
             this.Text = "Phiếu nhập hàng";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Load += new System.EventHandler(this.fImport_Load);
+=======
+>>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
 =======

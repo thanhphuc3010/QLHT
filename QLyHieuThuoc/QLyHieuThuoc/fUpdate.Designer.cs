@@ -93,7 +93,11 @@ namespace QLyHieuThuoc
             this.panel1.Name = "panel1";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.panel1.Size = new System.Drawing.Size(1507, 806);
+=======
+            this.panel1.Size = new System.Drawing.Size(1341, 645);
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.panel1.Size = new System.Drawing.Size(1341, 645);
 >>>>>>> parent of 636b571... Hưng commit
@@ -114,7 +118,11 @@ namespace QLyHieuThuoc
             this.panel3.Name = "panel3";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.panel3.Size = new System.Drawing.Size(1476, 378);
+=======
+            this.panel3.Size = new System.Drawing.Size(1314, 302);
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.panel3.Size = new System.Drawing.Size(1314, 302);
 >>>>>>> parent of 636b571... Hưng commit
@@ -136,7 +144,11 @@ namespace QLyHieuThuoc
             this.dsThuoc.RowTemplate.Height = 24;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.dsThuoc.Size = new System.Drawing.Size(1308, 320);
+=======
+            this.dsThuoc.Size = new System.Drawing.Size(1164, 256);
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.dsThuoc.Size = new System.Drawing.Size(1164, 256);
 >>>>>>> parent of 636b571... Hưng commit
@@ -174,6 +186,7 @@ namespace QLyHieuThuoc
             this.panel2.Location = new System.Drawing.Point(7, 5);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             this.panel2.Size = new System.Drawing.Size(1318, 412);
@@ -218,6 +231,8 @@ namespace QLyHieuThuoc
 =======
 =======
 >>>>>>> parent of 636b571... Hưng commit
+=======
+>>>>>>> parent of 636b571... Hưng commit
             this.panel2.Size = new System.Drawing.Size(1172, 330);
             this.panel2.TabIndex = 0;
             // 
@@ -225,6 +240,9 @@ namespace QLyHieuThuoc
             // 
             this.btnLuu.Location = new System.Drawing.Point(1053, 270);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 636b571... Hưng commit
+=======
 >>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
@@ -249,8 +267,12 @@ namespace QLyHieuThuoc
             // 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.btnXoa.Location = new System.Drawing.Point(1042, 338);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+=======
+            this.btnXoa.Location = new System.Drawing.Point(926, 270);
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.btnXoa.Location = new System.Drawing.Point(926, 270);
 >>>>>>> parent of 636b571... Hưng commit
@@ -268,8 +290,12 @@ namespace QLyHieuThuoc
             // 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.btnSua.Location = new System.Drawing.Point(907, 338);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+=======
+            this.btnSua.Location = new System.Drawing.Point(806, 270);
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.btnSua.Location = new System.Drawing.Point(806, 270);
 >>>>>>> parent of 636b571... Hưng commit
@@ -287,8 +313,12 @@ namespace QLyHieuThuoc
             // 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.btnThem.Location = new System.Drawing.Point(772, 338);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+=======
+            this.btnThem.Location = new System.Drawing.Point(686, 270);
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.btnThem.Location = new System.Drawing.Point(686, 270);
 >>>>>>> parent of 636b571... Hưng commit
@@ -314,10 +344,16 @@ namespace QLyHieuThuoc
             this.panel6.Controls.Add(this.label11);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.panel6.Location = new System.Drawing.Point(855, 88);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(445, 218);
+=======
+            this.panel6.Location = new System.Drawing.Point(788, 70);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(368, 174);
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.panel6.Location = new System.Drawing.Point(788, 70);
             this.panel6.Name = "panel6";
@@ -337,7 +373,11 @@ namespace QLyHieuThuoc
             this.txbNhaSanXuat.Name = "txbNhaSanXuat";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.txbNhaSanXuat.Size = new System.Drawing.Size(243, 26);
+=======
+            this.txbNhaSanXuat.Size = new System.Drawing.Size(189, 22);
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.txbNhaSanXuat.Size = new System.Drawing.Size(189, 22);
 >>>>>>> parent of 636b571... Hưng commit
@@ -363,7 +403,11 @@ namespace QLyHieuThuoc
             this.txbDongGoi.Name = "txbDongGoi";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.txbDongGoi.Size = new System.Drawing.Size(243, 26);
+=======
+            this.txbDongGoi.Size = new System.Drawing.Size(189, 22);
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.txbDongGoi.Size = new System.Drawing.Size(189, 22);
 >>>>>>> parent of 636b571... Hưng commit
@@ -389,7 +433,11 @@ namespace QLyHieuThuoc
             this.txbNoiSanXuat.Name = "txbNoiSanXuat";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.txbNoiSanXuat.Size = new System.Drawing.Size(243, 26);
+=======
+            this.txbNoiSanXuat.Size = new System.Drawing.Size(189, 22);
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.txbNoiSanXuat.Size = new System.Drawing.Size(189, 22);
 >>>>>>> parent of 636b571... Hưng commit
@@ -415,7 +463,11 @@ namespace QLyHieuThuoc
             this.txbDonGia.Name = "txbDonGia";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.txbDonGia.Size = new System.Drawing.Size(243, 26);
+=======
+            this.txbDonGia.Size = new System.Drawing.Size(189, 22);
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.txbDonGia.Size = new System.Drawing.Size(189, 22);
 >>>>>>> parent of 636b571... Hưng commit
@@ -447,6 +499,7 @@ namespace QLyHieuThuoc
             this.panel5.Controls.Add(this.label16);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.panel5.Location = new System.Drawing.Point(454, 88);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel5.Name = "panel5";
@@ -474,6 +527,15 @@ namespace QLyHieuThuoc
 =======
 =======
 >>>>>>> parent of 636b571... Hưng commit
+=======
+            this.panel5.Location = new System.Drawing.Point(404, 70);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(351, 174);
+            this.panel5.TabIndex = 10;
+            // 
+            // txbNgaySanXuat
+            // 
+>>>>>>> parent of 636b571... Hưng commit
             this.txbNgaySanXuat.Location = new System.Drawing.Point(134, 68);
             this.txbNgaySanXuat.Multiline = true;
             this.txbNgaySanXuat.Name = "txbNgaySanXuat";
@@ -495,6 +557,7 @@ namespace QLyHieuThuoc
             // 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.txbThanhPhan.Location = new System.Drawing.Point(163, 49);
             this.txbThanhPhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbThanhPhan.Multiline = true;
@@ -503,11 +566,16 @@ namespace QLyHieuThuoc
 =======
 =======
 >>>>>>> parent of 636b571... Hưng commit
+=======
+>>>>>>> parent of 636b571... Hưng commit
             this.txbThanhPhan.Location = new System.Drawing.Point(134, 40);
             this.txbThanhPhan.Multiline = true;
             this.txbThanhPhan.Name = "txbThanhPhan";
             this.txbThanhPhan.Size = new System.Drawing.Size(189, 22);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 636b571... Hưng commit
+=======
 >>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
@@ -527,6 +595,7 @@ namespace QLyHieuThuoc
             // 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.txbSoDangKy.Location = new System.Drawing.Point(163, 14);
             this.txbSoDangKy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbSoDangKy.Multiline = true;
@@ -542,6 +611,12 @@ namespace QLyHieuThuoc
 <<<<<<< HEAD
 >>>>>>> parent of 636b571... Hưng commit
 =======
+>>>>>>> parent of 636b571... Hưng commit
+=======
+            this.txbSoDangKy.Location = new System.Drawing.Point(134, 12);
+            this.txbSoDangKy.Multiline = true;
+            this.txbSoDangKy.Name = "txbSoDangKy";
+            this.txbSoDangKy.Size = new System.Drawing.Size(189, 22);
 >>>>>>> parent of 636b571... Hưng commit
             this.txbSoDangKy.TabIndex = 3;
             // 
@@ -559,10 +634,16 @@ namespace QLyHieuThuoc
             // 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.txbHanSuDung.Location = new System.Drawing.Point(163, 117);
             this.txbHanSuDung.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbHanSuDung.Name = "txbHanSuDung";
             this.txbHanSuDung.Size = new System.Drawing.Size(196, 26);
+=======
+            this.txbHanSuDung.Location = new System.Drawing.Point(134, 94);
+            this.txbHanSuDung.Name = "txbHanSuDung";
+            this.txbHanSuDung.Size = new System.Drawing.Size(189, 22);
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.txbHanSuDung.Location = new System.Drawing.Point(134, 94);
             this.txbHanSuDung.Name = "txbHanSuDung";
@@ -602,7 +683,11 @@ namespace QLyHieuThuoc
             this.panel4.Name = "panel4";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.panel4.Size = new System.Drawing.Size(395, 218);
+=======
+            this.panel4.Size = new System.Drawing.Size(351, 174);
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.panel4.Size = new System.Drawing.Size(351, 174);
 >>>>>>> parent of 636b571... Hưng commit
@@ -615,6 +700,7 @@ namespace QLyHieuThuoc
             // 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.txbSoLuong.Location = new System.Drawing.Point(129, 154);
             this.txbSoLuong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbSoLuong.Multiline = true;
@@ -623,11 +709,16 @@ namespace QLyHieuThuoc
 =======
 =======
 >>>>>>> parent of 636b571... Hưng commit
+=======
+>>>>>>> parent of 636b571... Hưng commit
             this.txbSoLuong.Location = new System.Drawing.Point(115, 124);
             this.txbSoLuong.Multiline = true;
             this.txbSoLuong.Name = "txbSoLuong";
             this.txbSoLuong.Size = new System.Drawing.Size(206, 25);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 636b571... Hưng commit
+=======
 >>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
@@ -647,6 +738,7 @@ namespace QLyHieuThuoc
             // 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.txbDonVi.Location = new System.Drawing.Point(129, 119);
             this.txbDonVi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbDonVi.Multiline = true;
@@ -659,10 +751,15 @@ namespace QLyHieuThuoc
             this.txbDonVi.Size = new System.Drawing.Size(206, 25);
 >>>>>>> parent of 636b571... Hưng commit
 =======
+=======
+>>>>>>> parent of 636b571... Hưng commit
             this.txbDonVi.Location = new System.Drawing.Point(115, 96);
             this.txbDonVi.Multiline = true;
             this.txbDonVi.Name = "txbDonVi";
             this.txbDonVi.Size = new System.Drawing.Size(206, 25);
+<<<<<<< HEAD
+>>>>>>> parent of 636b571... Hưng commit
+=======
 >>>>>>> parent of 636b571... Hưng commit
             this.txbDonVi.TabIndex = 7;
             // 
@@ -680,11 +777,18 @@ namespace QLyHieuThuoc
             // 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.txbHamLuong.Location = new System.Drawing.Point(129, 84);
             this.txbHamLuong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbHamLuong.Multiline = true;
             this.txbHamLuong.Name = "txbHamLuong";
             this.txbHamLuong.Size = new System.Drawing.Size(263, 30);
+=======
+            this.txbHamLuong.Location = new System.Drawing.Point(115, 68);
+            this.txbHamLuong.Multiline = true;
+            this.txbHamLuong.Name = "txbHamLuong";
+            this.txbHamLuong.Size = new System.Drawing.Size(206, 25);
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.txbHamLuong.Location = new System.Drawing.Point(115, 68);
             this.txbHamLuong.Multiline = true;
@@ -713,6 +817,7 @@ namespace QLyHieuThuoc
             // 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.txbTenThuoc.Location = new System.Drawing.Point(129, 49);
             this.txbTenThuoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbTenThuoc.Multiline = true;
@@ -728,6 +833,12 @@ namespace QLyHieuThuoc
 <<<<<<< HEAD
 >>>>>>> parent of 636b571... Hưng commit
 =======
+>>>>>>> parent of 636b571... Hưng commit
+=======
+            this.txbTenThuoc.Location = new System.Drawing.Point(115, 40);
+            this.txbTenThuoc.Multiline = true;
+            this.txbTenThuoc.Name = "txbTenThuoc";
+            this.txbTenThuoc.Size = new System.Drawing.Size(206, 25);
 >>>>>>> parent of 636b571... Hưng commit
             this.txbTenThuoc.TabIndex = 3;
             // 
@@ -745,6 +856,7 @@ namespace QLyHieuThuoc
             // 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.txbMaThuoc.Location = new System.Drawing.Point(129, 14);
             this.txbMaThuoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbMaThuoc.Multiline = true;
@@ -753,11 +865,16 @@ namespace QLyHieuThuoc
 =======
 =======
 >>>>>>> parent of 636b571... Hưng commit
+=======
+>>>>>>> parent of 636b571... Hưng commit
             this.txbMaThuoc.Location = new System.Drawing.Point(115, 12);
             this.txbMaThuoc.Multiline = true;
             this.txbMaThuoc.Name = "txbMaThuoc";
             this.txbMaThuoc.Size = new System.Drawing.Size(206, 25);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 636b571... Hưng commit
+=======
 >>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
@@ -779,7 +896,11 @@ namespace QLyHieuThuoc
             this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(508, 11);
+=======
+            this.label1.Location = new System.Drawing.Point(452, 9);
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.label1.Location = new System.Drawing.Point(452, 9);
 >>>>>>> parent of 636b571... Hưng commit
@@ -797,7 +918,11 @@ namespace QLyHieuThuoc
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1340, 831);
+=======
+            this.ClientSize = new System.Drawing.Size(1193, 665);
+>>>>>>> parent of 636b571... Hưng commit
 =======
             this.ClientSize = new System.Drawing.Size(1193, 665);
 >>>>>>> parent of 636b571... Hưng commit
