@@ -126,6 +126,7 @@
     <Compile Include="fType.Designer.cs">
       <DependentUpon>fType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Functions.cs" />
     <Compile Include="fUpdate.cs">
       <SubType>Form</SubType>
     </Compile>

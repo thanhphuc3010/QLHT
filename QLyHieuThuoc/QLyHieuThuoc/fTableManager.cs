@@ -63,9 +63,12 @@ namespace QLyHieuThuoc
         private void hóaĐơnBánHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fSale f = new fSale();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+
+            f.MdiParent = this;
+
+            //f.ShowDialog();
+
+            f.Show();
 
         }
 
