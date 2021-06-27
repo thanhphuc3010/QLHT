@@ -268,6 +268,7 @@ namespace QLyHieuThuoc
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
@@ -283,6 +284,63 @@ namespace QLyHieuThuoc
             this.dtpPODate.Name = "dtpPODate";
             this.dtpPODate.Size = new System.Drawing.Size(155, 30);
             this.dtpPODate.TabIndex = 5;
+=======
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(203, 22);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Nhập thông tin thuốc";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dateThanhToan);
+            this.panel2.Controls.Add(this.dateNhap);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Location = new System.Drawing.Point(583, 64);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(423, 111);
+            this.panel2.TabIndex = 10;
+            // 
+            // dateThanhToan
+            // 
+            this.dateThanhToan.Location = new System.Drawing.Point(148, 42);
+            this.dateThanhToan.Name = "dateThanhToan";
+            this.dateThanhToan.Size = new System.Drawing.Size(256, 22);
+            this.dateThanhToan.TabIndex = 6;
+            // 
+            // dateNhap
+            // 
+            this.dateNhap.Location = new System.Drawing.Point(148, 14);
+            this.dateNhap.Name = "dateNhap";
+            this.dateNhap.Size = new System.Drawing.Size(256, 22);
+            this.dateNhap.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 42);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(133, 20);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Hạn Thanh Toán";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Ngày Nhập";
+>>>>>>> parent of 636b571... Hưng commit
             // 
             // panel4
             // 
@@ -320,6 +378,7 @@ namespace QLyHieuThuoc
            
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
@@ -333,6 +392,15 @@ namespace QLyHieuThuoc
             this.txtMakeName.ReadOnly = true;
             this.txtMakeName.Size = new System.Drawing.Size(247, 30);
             this.txtMakeName.TabIndex = 3;
+=======
+            // 
+            // txbNCC
+            // 
+            this.txbNCC.Location = new System.Drawing.Point(173, 72);
+            this.txbNCC.Name = "txbNCC";
+            this.txbNCC.Size = new System.Drawing.Size(261, 22);
+            this.txbNCC.TabIndex = 3;
+>>>>>>> parent of 636b571... Hưng commit
             // 
             // label2
             // 
@@ -575,7 +643,10 @@ namespace QLyHieuThuoc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Load += new System.EventHandler(this.fImport_Load);
+=======
+>>>>>>> parent of 636b571... Hưng commit
 =======
 >>>>>>> parent of 636b571... Hưng commit
 =======
