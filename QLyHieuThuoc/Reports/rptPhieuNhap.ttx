@@ -1,0 +1,6 @@
+MaThuoc	String	16	2020BD02  
+TenThuoc	String	64	Vitamin
+DonviTinh	String	16	Vien
+SoLuongNhap	Number		125
+DonGiaNhap	Number		125000
+SoLuong	Number		12

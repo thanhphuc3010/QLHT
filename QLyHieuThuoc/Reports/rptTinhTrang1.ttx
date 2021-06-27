@@ -1,0 +1,5 @@
+TenThuoc	String	64	Vitamin
+DonviTinh	String	10	Tuyp
+DonGia	Number		125000
+TenNhaSX	String	64	Truong Tho
+HSD	Date		15/12/2000
