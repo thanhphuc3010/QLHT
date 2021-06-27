@@ -261,7 +261,12 @@ namespace QLyHieuThuoc
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(71, 20);
             this.label12.TabIndex = 19;
+<<<<<<< HEAD
             this.label12.Text = "Giá vốn:";
+=======
+            this.label12.Text = "Đơn giá";
+
+>>>>>>> parent of 636b571... Hưng commit
             // 
             // dtpPODate
             // 
@@ -292,6 +297,7 @@ namespace QLyHieuThuoc
             // 
             // txtPoID
             // 
+<<<<<<< HEAD
             this.txtPoID.BackColor = System.Drawing.SystemColors.Control;
             this.txtPoID.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPoID.ForeColor = System.Drawing.SystemColors.HotTrack;
@@ -300,6 +306,13 @@ namespace QLyHieuThuoc
             this.txtPoID.ReadOnly = true;
             this.txtPoID.Size = new System.Drawing.Size(248, 30);
             this.txtPoID.TabIndex = 1;
+=======
+            this.txbMaThuoc.Location = new System.Drawing.Point(173, 16);
+            this.txbMaThuoc.Name = "txbMaThuoc";
+            this.txbMaThuoc.Size = new System.Drawing.Size(261, 22);
+            this.txbMaThuoc.TabIndex = 1;
+           
+>>>>>>> parent of 636b571... Hưng commit
             // 
             // txtMakeName
             // 
@@ -547,7 +560,10 @@ namespace QLyHieuThuoc
             this.Name = "fImport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phiếu nhập hàng";
+<<<<<<< HEAD
             this.Load += new System.EventHandler(this.fImport_Load);
+=======
+>>>>>>> parent of 636b571... Hưng commit
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);

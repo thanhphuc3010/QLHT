@@ -103,6 +103,7 @@ D:\PTUDQL2021\QLHT\QLyHieuThuoc\QLyHieuThuoc\bin\Debug\Castle.Core.xml
 D:\PTUDQL2021\QLHT\QLyHieuThuoc\QLyHieuThuoc\bin\Debug\NSubstitute.xml
 D:\PTUDQL2021\QLHT\QLyHieuThuoc\QLyHieuThuoc\bin\Debug\System.Threading.Tasks.Extensions.xml
 <<<<<<< HEAD
+<<<<<<< HEAD
 D:\QLHT\QLHT\QLyHieuThuoc\QLyHieuThuoc\obj\Debug\QLyHieuThuoc.csprojAssemblyReference.cache
 D:\QLHT\QLHT\QLyHieuThuoc\QLyHieuThuoc\obj\Debug\QLyHieuThuoc.fCustomer.resources
 D:\QLHT\QLHT\QLyHieuThuoc\QLyHieuThuoc\obj\Debug\QLyHieuThuoc.fImport.resources
@@ -203,3 +204,5 @@ C:\Users\nguyetltm\Documents\PTUDQL\QLHT\QLyHieuThuoc\QLyHieuThuoc\bin\Debug\Cry
 C:\Users\nguyetltm\Documents\PTUDQL\QLHT\QLyHieuThuoc\QLyHieuThuoc\bin\Debug\ShockwaveFlashObjects.dll
 C:\Users\nguyetltm\Documents\PTUDQL\QLHT\QLyHieuThuoc\QLyHieuThuoc\obj\Debug\QLyHieuThuoc.frmTinhTrangPrv.resources
 >>>>>>> nguyet-qlht
+=======
+>>>>>>> parent of 636b571... Hưng commit

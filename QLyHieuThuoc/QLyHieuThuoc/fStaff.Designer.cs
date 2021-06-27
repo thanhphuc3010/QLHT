@@ -48,11 +48,6 @@ namespace QLyHieuThuoc
             this.txbMaNV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txbPassword = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.ckNam = new System.Windows.Forms.CheckBox();
-            this.ckNu = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drgDSNV)).BeginInit();
@@ -72,27 +67,21 @@ namespace QLyHieuThuoc
             // 
             this.panel3.Controls.Add(this.drgDSNV);
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(4, 293);
+            this.panel3.Location = new System.Drawing.Point(4, 286);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1044, 310);
+            this.panel3.Size = new System.Drawing.Size(1044, 317);
             this.panel3.TabIndex = 23;
             // 
             // drgDSNV
             // 
-            this.drgDSNV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.drgDSNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.drgDSNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.drgDSNV.Location = new System.Drawing.Point(7, 60);
             this.drgDSNV.Name = "drgDSNV";
             this.drgDSNV.RowHeadersWidth = 51;
             this.drgDSNV.RowTemplate.Height = 24;
-            this.drgDSNV.Size = new System.Drawing.Size(1023, 239);
+            this.drgDSNV.Size = new System.Drawing.Size(1023, 246);
             this.drgDSNV.TabIndex = 24;
             this.drgDSNV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drgDSNV_CellContentClick);
-            this.drgDSNV.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.drgDSNV_CellContentDoubleClick);
-            this.drgDSNV.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.drgDSNV_CellFormatting);
             this.drgDSNV.MouseUp += new System.Windows.Forms.MouseEventHandler(this.drgDSNV_MouseUp);
             // 
             // label6
@@ -107,11 +96,6 @@ namespace QLyHieuThuoc
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.ckNu);
-            this.panel2.Controls.Add(this.ckNam);
-            this.panel2.Controls.Add(this.txbPassword);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.btnLuu);
             this.panel2.Controls.Add(this.btnXoa);
@@ -128,9 +112,8 @@ namespace QLyHieuThuoc
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(5, 10);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1043, 277);
+            this.panel2.Size = new System.Drawing.Size(1043, 260);
             this.panel2.TabIndex = 22;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label7
             // 
@@ -144,7 +127,7 @@ namespace QLyHieuThuoc
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(927, 217);
+            this.btnLuu.Location = new System.Drawing.Point(927, 194);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(103, 57);
             this.btnLuu.TabIndex = 21;
@@ -154,7 +137,7 @@ namespace QLyHieuThuoc
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(800, 217);
+            this.btnXoa.Location = new System.Drawing.Point(800, 194);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(103, 57);
             this.btnXoa.TabIndex = 20;
@@ -164,7 +147,7 @@ namespace QLyHieuThuoc
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(680, 217);
+            this.btnSua.Location = new System.Drawing.Point(680, 194);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(103, 57);
             this.btnSua.TabIndex = 19;
@@ -174,7 +157,7 @@ namespace QLyHieuThuoc
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(560, 217);
+            this.btnThem.Location = new System.Drawing.Point(560, 194);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(103, 57);
             this.btnThem.TabIndex = 18;
@@ -184,7 +167,7 @@ namespace QLyHieuThuoc
             // 
             // txbSDTNV
             // 
-            this.txbSDTNV.Location = new System.Drawing.Point(779, 137);
+            this.txbSDTNV.Location = new System.Drawing.Point(779, 142);
             this.txbSDTNV.Multiline = true;
             this.txbSDTNV.Name = "txbSDTNV";
             this.txbSDTNV.Size = new System.Drawing.Size(251, 25);
@@ -194,7 +177,7 @@ namespace QLyHieuThuoc
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(634, 137);
+            this.label5.Location = new System.Drawing.Point(634, 142);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 20);
             this.label5.TabIndex = 8;
@@ -264,57 +247,6 @@ namespace QLyHieuThuoc
             this.label1.TabIndex = 1;
             this.label1.Text = "NHÂN VIÊN";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(21, 174);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 20);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Giới tính";
-            // 
-            // txbPassword
-            // 
-            this.txbPassword.Location = new System.Drawing.Point(779, 174);
-            this.txbPassword.Multiline = true;
-            this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(251, 25);
-            this.txbPassword.TabIndex = 26;
-            this.txbPassword.UseSystemPasswordChar = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(634, 174);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 20);
-            this.label9.TabIndex = 25;
-            this.label9.Text = "Password";
-            // 
-            // ckNam
-            // 
-            this.ckNam.AutoSize = true;
-            this.ckNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckNam.Location = new System.Drawing.Point(166, 173);
-            this.ckNam.Name = "ckNam";
-            this.ckNam.Size = new System.Drawing.Size(66, 24);
-            this.ckNam.TabIndex = 27;
-            this.ckNam.Text = "Nam";
-            this.ckNam.UseVisualStyleBackColor = true;
-            // 
-            // ckNu
-            // 
-            this.ckNu.AutoSize = true;
-            this.ckNu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckNu.Location = new System.Drawing.Point(271, 173);
-            this.ckNu.Name = "ckNu";
-            this.ckNu.Size = new System.Drawing.Size(52, 24);
-            this.ckNu.TabIndex = 28;
-            this.ckNu.Text = "Nữ";
-            this.ckNu.UseVisualStyleBackColor = true;
-            // 
             // fStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -322,7 +254,6 @@ namespace QLyHieuThuoc
             this.ClientSize = new System.Drawing.Size(1080, 623);
             this.Controls.Add(this.panel1);
             this.Name = "fStaff";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhân viên";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fStaff_FormClosing);
             this.Load += new System.EventHandler(this.fStaff_Load);
@@ -357,10 +288,5 @@ namespace QLyHieuThuoc
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView drgDSNV;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txbPassword;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.CheckBox ckNu;
-        private System.Windows.Forms.CheckBox ckNam;
     }
 }

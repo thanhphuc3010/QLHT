@@ -91,7 +91,11 @@ namespace QLyHieuThuoc
             this.panel1.Location = new System.Drawing.Point(7, 10);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
+<<<<<<< HEAD
             this.panel1.Size = new System.Drawing.Size(1507, 806);
+=======
+            this.panel1.Size = new System.Drawing.Size(1341, 645);
+>>>>>>> parent of 636b571... Hưng commit
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -104,7 +108,11 @@ namespace QLyHieuThuoc
             this.panel3.Location = new System.Drawing.Point(12, 425);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
+<<<<<<< HEAD
             this.panel3.Size = new System.Drawing.Size(1476, 378);
+=======
+            this.panel3.Size = new System.Drawing.Size(1314, 302);
+>>>>>>> parent of 636b571... Hưng commit
             this.panel3.TabIndex = 1;
             // 
             // dsThuoc
@@ -118,7 +126,11 @@ namespace QLyHieuThuoc
             this.dsThuoc.Name = "dsThuoc";
             this.dsThuoc.RowHeadersWidth = 51;
             this.dsThuoc.RowTemplate.Height = 24;
+<<<<<<< HEAD
             this.dsThuoc.Size = new System.Drawing.Size(1308, 320);
+=======
+            this.dsThuoc.Size = new System.Drawing.Size(1164, 256);
+>>>>>>> parent of 636b571... Hưng commit
             this.dsThuoc.TabIndex = 18;
             this.dsThuoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dsThuoc_CellContentClick);
             this.dsThuoc.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dsThuoc_MouseUp);
@@ -150,6 +162,7 @@ namespace QLyHieuThuoc
             this.panel2.Location = new System.Drawing.Point(7, 5);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
+<<<<<<< HEAD
             this.panel2.Size = new System.Drawing.Size(1318, 412);
             this.panel2.TabIndex = 0;
             // 
@@ -189,6 +202,14 @@ namespace QLyHieuThuoc
             // 
             this.btnLuu.Location = new System.Drawing.Point(1185, 338);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+=======
+            this.panel2.Size = new System.Drawing.Size(1172, 330);
+            this.panel2.TabIndex = 0;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Location = new System.Drawing.Point(1053, 270);
+>>>>>>> parent of 636b571... Hưng commit
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(116, 71);
             this.btnLuu.TabIndex = 17;
@@ -208,8 +229,12 @@ namespace QLyHieuThuoc
             // 
             // btnXoa
             // 
+<<<<<<< HEAD
             this.btnXoa.Location = new System.Drawing.Point(1042, 338);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+=======
+            this.btnXoa.Location = new System.Drawing.Point(926, 270);
+>>>>>>> parent of 636b571... Hưng commit
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(116, 71);
             this.btnXoa.TabIndex = 14;
@@ -219,8 +244,12 @@ namespace QLyHieuThuoc
             // 
             // btnSua
             // 
+<<<<<<< HEAD
             this.btnSua.Location = new System.Drawing.Point(907, 338);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+=======
+            this.btnSua.Location = new System.Drawing.Point(806, 270);
+>>>>>>> parent of 636b571... Hưng commit
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(116, 71);
             this.btnSua.TabIndex = 13;
@@ -230,8 +259,12 @@ namespace QLyHieuThuoc
             // 
             // btnThem
             // 
+<<<<<<< HEAD
             this.btnThem.Location = new System.Drawing.Point(772, 338);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+=======
+            this.btnThem.Location = new System.Drawing.Point(686, 270);
+>>>>>>> parent of 636b571... Hưng commit
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(116, 71);
             this.btnThem.TabIndex = 12;
@@ -249,10 +282,16 @@ namespace QLyHieuThuoc
             this.panel6.Controls.Add(this.label15);
             this.panel6.Controls.Add(this.txbDonGia);
             this.panel6.Controls.Add(this.label11);
+<<<<<<< HEAD
             this.panel6.Location = new System.Drawing.Point(855, 88);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(445, 218);
+=======
+            this.panel6.Location = new System.Drawing.Point(788, 70);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(368, 174);
+>>>>>>> parent of 636b571... Hưng commit
             this.panel6.TabIndex = 11;
             // 
             // txbNhaSanXuat
@@ -260,7 +299,11 @@ namespace QLyHieuThuoc
             this.txbNhaSanXuat.Location = new System.Drawing.Point(199, 119);
             this.txbNhaSanXuat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbNhaSanXuat.Name = "txbNhaSanXuat";
+<<<<<<< HEAD
             this.txbNhaSanXuat.Size = new System.Drawing.Size(243, 26);
+=======
+            this.txbNhaSanXuat.Size = new System.Drawing.Size(189, 22);
+>>>>>>> parent of 636b571... Hưng commit
             this.txbNhaSanXuat.TabIndex = 7;
             // 
             // label13
@@ -278,7 +321,11 @@ namespace QLyHieuThuoc
             this.txbDongGoi.Location = new System.Drawing.Point(199, 84);
             this.txbDongGoi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbDongGoi.Name = "txbDongGoi";
+<<<<<<< HEAD
             this.txbDongGoi.Size = new System.Drawing.Size(243, 26);
+=======
+            this.txbDongGoi.Size = new System.Drawing.Size(189, 22);
+>>>>>>> parent of 636b571... Hưng commit
             this.txbDongGoi.TabIndex = 5;
             // 
             // label14
@@ -296,7 +343,11 @@ namespace QLyHieuThuoc
             this.txbNoiSanXuat.Location = new System.Drawing.Point(199, 50);
             this.txbNoiSanXuat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbNoiSanXuat.Name = "txbNoiSanXuat";
+<<<<<<< HEAD
             this.txbNoiSanXuat.Size = new System.Drawing.Size(243, 26);
+=======
+            this.txbNoiSanXuat.Size = new System.Drawing.Size(189, 22);
+>>>>>>> parent of 636b571... Hưng commit
             this.txbNoiSanXuat.TabIndex = 3;
             // 
             // label15
@@ -314,7 +365,11 @@ namespace QLyHieuThuoc
             this.txbDonGia.Location = new System.Drawing.Point(199, 14);
             this.txbDonGia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbDonGia.Name = "txbDonGia";
+<<<<<<< HEAD
             this.txbDonGia.Size = new System.Drawing.Size(243, 26);
+=======
+            this.txbDonGia.Size = new System.Drawing.Size(189, 22);
+>>>>>>> parent of 636b571... Hưng commit
             this.txbDonGia.TabIndex = 1;
             this.txbDonGia.TextChanged += new System.EventHandler(this.txbDonGia_TextChanged);
             // 
@@ -338,18 +393,32 @@ namespace QLyHieuThuoc
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.txbHanSuDung);
             this.panel5.Controls.Add(this.label16);
+<<<<<<< HEAD
             this.panel5.Location = new System.Drawing.Point(454, 88);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(395, 218);
+=======
+            this.panel5.Location = new System.Drawing.Point(404, 70);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(351, 174);
+>>>>>>> parent of 636b571... Hưng commit
             this.panel5.TabIndex = 10;
             // 
             // dtNgaySanXuat
             // 
+<<<<<<< HEAD
             this.dtNgaySanXuat.Location = new System.Drawing.Point(163, 84);
             this.dtNgaySanXuat.Name = "dtNgaySanXuat";
             this.dtNgaySanXuat.Size = new System.Drawing.Size(196, 26);
             this.dtNgaySanXuat.TabIndex = 7;
+=======
+            this.txbNgaySanXuat.Location = new System.Drawing.Point(134, 68);
+            this.txbNgaySanXuat.Multiline = true;
+            this.txbNgaySanXuat.Name = "txbNgaySanXuat";
+            this.txbNgaySanXuat.Size = new System.Drawing.Size(189, 22);
+            this.txbNgaySanXuat.TabIndex = 7;
+>>>>>>> parent of 636b571... Hưng commit
             // 
             // label8
             // 
@@ -363,11 +432,18 @@ namespace QLyHieuThuoc
             // 
             // txbThanhPhan
             // 
+<<<<<<< HEAD
             this.txbThanhPhan.Location = new System.Drawing.Point(163, 49);
             this.txbThanhPhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbThanhPhan.Multiline = true;
             this.txbThanhPhan.Name = "txbThanhPhan";
             this.txbThanhPhan.Size = new System.Drawing.Size(196, 26);
+=======
+            this.txbThanhPhan.Location = new System.Drawing.Point(134, 40);
+            this.txbThanhPhan.Multiline = true;
+            this.txbThanhPhan.Name = "txbThanhPhan";
+            this.txbThanhPhan.Size = new System.Drawing.Size(189, 22);
+>>>>>>> parent of 636b571... Hưng commit
             this.txbThanhPhan.TabIndex = 5;
             // 
             // label9
@@ -382,11 +458,18 @@ namespace QLyHieuThuoc
             // 
             // txbSoDangKy
             // 
+<<<<<<< HEAD
             this.txbSoDangKy.Location = new System.Drawing.Point(163, 14);
             this.txbSoDangKy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbSoDangKy.Multiline = true;
             this.txbSoDangKy.Name = "txbSoDangKy";
             this.txbSoDangKy.Size = new System.Drawing.Size(196, 26);
+=======
+            this.txbSoDangKy.Location = new System.Drawing.Point(134, 12);
+            this.txbSoDangKy.Multiline = true;
+            this.txbSoDangKy.Name = "txbSoDangKy";
+            this.txbSoDangKy.Size = new System.Drawing.Size(189, 22);
+>>>>>>> parent of 636b571... Hưng commit
             this.txbSoDangKy.TabIndex = 3;
             // 
             // label10
@@ -401,10 +484,16 @@ namespace QLyHieuThuoc
             // 
             // txbHanSuDung
             // 
+<<<<<<< HEAD
             this.txbHanSuDung.Location = new System.Drawing.Point(163, 117);
             this.txbHanSuDung.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbHanSuDung.Name = "txbHanSuDung";
             this.txbHanSuDung.Size = new System.Drawing.Size(196, 26);
+=======
+            this.txbHanSuDung.Location = new System.Drawing.Point(134, 94);
+            this.txbHanSuDung.Name = "txbHanSuDung";
+            this.txbHanSuDung.Size = new System.Drawing.Size(189, 22);
+>>>>>>> parent of 636b571... Hưng commit
             this.txbHanSuDung.TabIndex = 1;
             // 
             // label16
@@ -432,16 +521,27 @@ namespace QLyHieuThuoc
             this.panel4.Location = new System.Drawing.Point(24, 88);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
+<<<<<<< HEAD
             this.panel4.Size = new System.Drawing.Size(395, 218);
+=======
+            this.panel4.Size = new System.Drawing.Size(351, 174);
+>>>>>>> parent of 636b571... Hưng commit
             this.panel4.TabIndex = 1;
             // 
             // txbSoLuong
             // 
+<<<<<<< HEAD
             this.txbSoLuong.Location = new System.Drawing.Point(129, 154);
             this.txbSoLuong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbSoLuong.Multiline = true;
             this.txbSoLuong.Name = "txbSoLuong";
             this.txbSoLuong.Size = new System.Drawing.Size(263, 30);
+=======
+            this.txbSoLuong.Location = new System.Drawing.Point(115, 124);
+            this.txbSoLuong.Multiline = true;
+            this.txbSoLuong.Name = "txbSoLuong";
+            this.txbSoLuong.Size = new System.Drawing.Size(206, 25);
+>>>>>>> parent of 636b571... Hưng commit
             this.txbSoLuong.TabIndex = 9;
             // 
             // label6
@@ -456,11 +556,18 @@ namespace QLyHieuThuoc
             // 
             // txbDonVi
             // 
+<<<<<<< HEAD
             this.txbDonVi.Location = new System.Drawing.Point(129, 119);
             this.txbDonVi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbDonVi.Multiline = true;
             this.txbDonVi.Name = "txbDonVi";
             this.txbDonVi.Size = new System.Drawing.Size(263, 30);
+=======
+            this.txbDonVi.Location = new System.Drawing.Point(115, 96);
+            this.txbDonVi.Multiline = true;
+            this.txbDonVi.Name = "txbDonVi";
+            this.txbDonVi.Size = new System.Drawing.Size(206, 25);
+>>>>>>> parent of 636b571... Hưng commit
             this.txbDonVi.TabIndex = 7;
             // 
             // label5
@@ -475,11 +582,18 @@ namespace QLyHieuThuoc
             // 
             // txbHamLuong
             // 
+<<<<<<< HEAD
             this.txbHamLuong.Location = new System.Drawing.Point(129, 84);
             this.txbHamLuong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbHamLuong.Multiline = true;
             this.txbHamLuong.Name = "txbHamLuong";
             this.txbHamLuong.Size = new System.Drawing.Size(263, 30);
+=======
+            this.txbHamLuong.Location = new System.Drawing.Point(115, 68);
+            this.txbHamLuong.Multiline = true;
+            this.txbHamLuong.Name = "txbHamLuong";
+            this.txbHamLuong.Size = new System.Drawing.Size(206, 25);
+>>>>>>> parent of 636b571... Hưng commit
             this.txbHamLuong.TabIndex = 5;
             // 
             // label4
@@ -494,11 +608,18 @@ namespace QLyHieuThuoc
             // 
             // txbTenThuoc
             // 
+<<<<<<< HEAD
             this.txbTenThuoc.Location = new System.Drawing.Point(129, 49);
             this.txbTenThuoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbTenThuoc.Multiline = true;
             this.txbTenThuoc.Name = "txbTenThuoc";
             this.txbTenThuoc.Size = new System.Drawing.Size(263, 30);
+=======
+            this.txbTenThuoc.Location = new System.Drawing.Point(115, 40);
+            this.txbTenThuoc.Multiline = true;
+            this.txbTenThuoc.Name = "txbTenThuoc";
+            this.txbTenThuoc.Size = new System.Drawing.Size(206, 25);
+>>>>>>> parent of 636b571... Hưng commit
             this.txbTenThuoc.TabIndex = 3;
             // 
             // label3
@@ -513,11 +634,18 @@ namespace QLyHieuThuoc
             // 
             // txbMaThuoc
             // 
+<<<<<<< HEAD
             this.txbMaThuoc.Location = new System.Drawing.Point(129, 14);
             this.txbMaThuoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbMaThuoc.Multiline = true;
             this.txbMaThuoc.Name = "txbMaThuoc";
             this.txbMaThuoc.Size = new System.Drawing.Size(263, 30);
+=======
+            this.txbMaThuoc.Location = new System.Drawing.Point(115, 12);
+            this.txbMaThuoc.Multiline = true;
+            this.txbMaThuoc.Name = "txbMaThuoc";
+            this.txbMaThuoc.Size = new System.Drawing.Size(206, 25);
+>>>>>>> parent of 636b571... Hưng commit
             this.txbMaThuoc.TabIndex = 1;
             // 
             // label2
@@ -534,7 +662,11 @@ namespace QLyHieuThuoc
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(508, 11);
+=======
+            this.label1.Location = new System.Drawing.Point(452, 9);
+>>>>>>> parent of 636b571... Hưng commit
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(263, 33);
             this.label1.TabIndex = 0;
@@ -544,7 +676,11 @@ namespace QLyHieuThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1340, 831);
+=======
+            this.ClientSize = new System.Drawing.Size(1193, 665);
+>>>>>>> parent of 636b571... Hưng commit
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "fUpdate";

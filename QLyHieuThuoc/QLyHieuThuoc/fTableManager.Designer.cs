@@ -32,7 +32,6 @@ namespace QLyHieuThuoc
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.giớiThiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.danhSáchNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýCậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cậpNhậtThuốcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hóaĐơnNhậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,6 +47,10 @@ namespace QLyHieuThuoc
             this.bánHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tạoHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lịchSửBánHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< HEAD
+=======
+            this.danhSáchNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+>>>>>>> parent of 636b571... Hưng commit
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +66,11 @@ namespace QLyHieuThuoc
             this.bánHàngToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+<<<<<<< HEAD
             this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+=======
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+>>>>>>> parent of 636b571... Hưng commit
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -80,13 +87,6 @@ namespace QLyHieuThuoc
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
             this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
             this.trợGiúpToolStripMenuItem.Text = "Quản lý nhân viên";
-            // 
-            // danhSáchNhânViênToolStripMenuItem
-            // 
-            this.danhSáchNhânViênToolStripMenuItem.Name = "danhSáchNhânViênToolStripMenuItem";
-            this.danhSáchNhânViênToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.danhSáchNhânViênToolStripMenuItem.Text = "Danh sách nhân viên";
-            this.danhSáchNhânViênToolStripMenuItem.Click += new System.EventHandler(this.danhSáchNhânViênToolStripMenuItem_Click);
             // 
             // quảnLýCậpToolStripMenuItem
             // 
@@ -184,20 +184,40 @@ namespace QLyHieuThuoc
             this.tạoHóaĐơnToolStripMenuItem,
             this.lịchSửBánHàngToolStripMenuItem});
             this.bánHàngToolStripMenuItem.Name = "bánHàngToolStripMenuItem";
+<<<<<<< HEAD
             this.bánHàngToolStripMenuItem.Size = new System.Drawing.Size(85, 26);
+=======
+            this.bánHàngToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
+>>>>>>> parent of 636b571... Hưng commit
             this.bánHàngToolStripMenuItem.Text = "Bán hàng";
             // 
             // tạoHóaĐơnToolStripMenuItem
             // 
             this.tạoHóaĐơnToolStripMenuItem.Name = "tạoHóaĐơnToolStripMenuItem";
+<<<<<<< HEAD
             this.tạoHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+=======
+            this.tạoHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+>>>>>>> parent of 636b571... Hưng commit
             this.tạoHóaĐơnToolStripMenuItem.Text = "Tạo hóa đơn";
             // 
             // lịchSửBánHàngToolStripMenuItem
             // 
             this.lịchSửBánHàngToolStripMenuItem.Name = "lịchSửBánHàngToolStripMenuItem";
+<<<<<<< HEAD
             this.lịchSửBánHàngToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
             this.lịchSửBánHàngToolStripMenuItem.Text = "Lịch sử bán hàng";
+=======
+            this.lịchSửBánHàngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.lịchSửBánHàngToolStripMenuItem.Text = "Lịch sử bán hàng";
+            // 
+            // danhSáchNhânViênToolStripMenuItem
+            // 
+            this.danhSáchNhânViênToolStripMenuItem.Name = "danhSáchNhânViênToolStripMenuItem";
+            this.danhSáchNhânViênToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.danhSáchNhânViênToolStripMenuItem.Text = "Danh sách nhân viên";
+            this.danhSáchNhânViênToolStripMenuItem.Click += new System.EventHandler(this.danhSáchNhânViênToolStripMenuItem_Click);
+>>>>>>> parent of 636b571... Hưng commit
             // 
             // fTableManager
             // 
@@ -210,7 +230,10 @@ namespace QLyHieuThuoc
             this.Name = "fTableManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý hiệu thuốc";
+<<<<<<< HEAD
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+=======
+>>>>>>> parent of 636b571... Hưng commit
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

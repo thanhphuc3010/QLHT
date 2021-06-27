@@ -97,13 +97,12 @@ namespace QLyHieuThuoc
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-          
             string query = "DELETE FROM tbl_DMNhaSX WHERE MaNhaSX = @MaNhaSX";
 
             Database db = new Database();
 
             int rows = db.excuteNonQuery(query, new object[] { txbMaNSX.Text });
-            
+
             HienThi();
         }
 
@@ -120,10 +119,10 @@ namespace QLyHieuThuoc
                 if (checkRequired())
                 {
                     int rows = db.excuteNonQuery(query, new object[] { txbMaNSX.Text, txbTenNSX.Text, txbDChiNSX.Text, txbSdtNSX.Text, txbemail.Text });
-                        if (rows == 1)
-                        {
-                            MessageBox.Show("Thêm mới nhà sản xuất thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                    if (rows == 1)
+                    {
+                        MessageBox.Show("Thêm mới nhà sản xuất thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                     else
                     {
                         MessageBox.Show("Thêm câu hỏi thất bại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -143,7 +142,6 @@ namespace QLyHieuThuoc
                     btnLuu.Enabled = false;
 
                     enableDgrEvent();
-                    HienThi();
                 }
                 else
                 {
@@ -176,8 +174,6 @@ namespace QLyHieuThuoc
                 btnLuu.Enabled = false;
 
                 enableDgrEvent();
-               
-
             }
         }
         private Boolean checkRequired()
@@ -232,13 +228,16 @@ namespace QLyHieuThuoc
             string result;
             if (i < 10)
             {
-                result = "SX" + "00" + i.ToString().Trim();
+                result = "SX" + "000" + i.ToString().Trim();
             }
             else if (i < 100)
             {
+                result = "SX" + "00" + i.ToString().Trim();
+            }
+            else if (i < 1000)
+            {
                 result = "SX" + "0" + i.ToString().Trim();
             }
-            
             else result = "SX" + i.ToString().Trim();
 
             return result;
@@ -253,32 +252,6 @@ namespace QLyHieuThuoc
         private void dmNSX_MouseUp(object sender, MouseEventArgs e)
         {
             loadDataToTextbox();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txtKeySearch_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtKeySearch_KeyUp(object sender, KeyEventArgs e)
-        {
-            string query = " SELECT * FROM tbl_DMNhaSX Where MaNhaSX LIKE '%" + txtKeySearch.Text + "%'" + "" +
-               " OR TenNhaX LIKE N'%" + txtKeySearch.Text + "%'" + "" +
-               " OR DChiNhaSX LIKE N'%" + txtKeySearch.Text + "%'" + "" +
-               " OR SdtNhaSX LIKE '%" + txtKeySearch.Text + "%'" + "" +
-               " OR email LIKE '%" + txtKeySearch.Text + "%'";
-            Database db = new Database();
-            dmNSX.DataSource = db.excuteQuery(query);
         }
     }
 }

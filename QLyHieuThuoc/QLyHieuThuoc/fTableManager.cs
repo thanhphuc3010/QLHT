@@ -10,10 +10,8 @@ using System.Windows.Forms;
 
 namespace QLyHieuThuoc
 {
-    
     public partial class fTableManager : Form
     {
-        bool isExit = true;
         public fTableManager()
         {
             InitializeComponent();
@@ -80,46 +78,6 @@ namespace QLyHieuThuoc
             this.Hide();
             f.ShowDialog();
             this.Show();
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-       
-        private void fTableManager_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void tạoHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fListSale f = new fListSale();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
-
-        private void lịchSửBánHàngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fListImport f = new fListImport();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            isExit = false;
-            this.Close();
-            fLogin f = new fLogin();
-            f.Show();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            if (isExit)
-                Application.Exit();
         }
     }
 }

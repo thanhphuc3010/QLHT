@@ -345,10 +345,5 @@ namespace QLyHieuThuoc
         {
             loadDataToTextbox();
         }
-
-        private void txtKeySearch_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
